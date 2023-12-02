@@ -42,28 +42,15 @@
 
     <el-container>
       <el-header style="text-align: left; font-size: 12px; background: white">
-<!--        <el-dropdown>-->
-
-<!--          <i class="el-icon-setting" style="margin-right: 15px"></i>-->
-<!--          <el-dropdown-menu slot="dropdown">-->
-<!--            <el-dropdown-item>查看</el-dropdown-item>-->
-<!--            <el-dropdown-item>新增</el-dropdown-item>-->
-<!--            <el-dropdown-item>删除</el-dropdown-item>-->
-<!--          </el-dropdown-menu>-->
-
-<!--          <a href="https://www.baidu.com" class="icon">icon</a>-->
-<!--          <div class="iconNav">-->
-<!--          </div>-->
-<!--        </el-dropdown >-->
 
 
         <el-menu style="text-align: center" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
           <el-row :gutter="20">
-            <el-col :span="15" style="text-align: left">
+            <el-col :span="10" style="text-align: left">
               <div>TikTok</div>
             </el-col>
 
-            <el-col :span="6" style="text-align: left">
+            <el-col :span="11" style="text-align: left">
               <IndexInput></IndexInput>
             </el-col>
 
@@ -100,23 +87,14 @@
 <!--                </el-submenu>-->
               </el-submenu>
             </el-col>
-
           </el-row>
-
         </el-menu>
-
-
       </el-header>
 
-
-
-
-
-
       <el-main>
-
         <h1>Video</h1>
       </el-main>
+
     </el-container>
   </el-container>
 </template>
@@ -161,11 +139,7 @@ import IndexInput from "@/components/IndexInput.vue";
 export default {
 
   data() {
-    const item = {
-      date: '2016-05-02',
-      name: '王小虎',
-      address: '上海市普陀区金沙江路 1518 弄'
-    };
+
     return {
       tableData: Array(20).fill(item),
       activeIndex: '1',
