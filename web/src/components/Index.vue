@@ -1,56 +1,30 @@
 <template>
-  <el-container style="height: 500px; border: 1px solid #eee">
-    <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+  <el-container style="height: 800px; border: 1px solid #eee; margin-top: -40px">
+
+    <el-aside width="80px" style="background-color: rgb(238, 241, 246);">
+      <div style="margin-top:21px; margin-bottom: 21px">TIKTOK</div>
       <el-menu :default-openeds="['1', '3']">
         <el-menu-item>首页</el-menu-item>
         <el-menu-item>推荐</el-menu-item>
+        <el-menu-item>商城</el-menu-item>
         <el-menu-item>关注</el-menu-item>
         <el-menu-item>朋友</el-menu-item>
         <el-menu-item>我的</el-menu-item>
-<!--        <el-submenu index="2">-->
-<!--          <template slot="title"><i class="el-icon-menu"></i>导航二</template>-->
-<!--          <el-menu-item-group>-->
-<!--            <template slot="title">分组一</template>-->
-<!--            <el-menu-item index="2-1">选项1</el-menu-item>-->
-<!--            <el-menu-item index="2-2">选项2</el-menu-item>-->
-<!--          </el-menu-item-group>-->
-<!--          <el-menu-item-group title="分组2">-->
-<!--            <el-menu-item index="2-3">选项3</el-menu-item>-->
-<!--          </el-menu-item-group>-->
-<!--          <el-submenu index="2-4">-->
-<!--            <template slot="title">选项4</template>-->
-<!--            <el-menu-item index="2-4-1">选项4-1</el-menu-item>-->
-<!--          </el-submenu>-->
-<!--        </el-submenu>-->
-<!--        <el-submenu index="3">-->
-<!--          <template slot="title"><i class="el-icon-setting"></i>导航三</template>-->
-<!--          <el-menu-item-group>-->
-<!--            <template slot="title">分组一</template>-->
-<!--            <el-menu-item index="3-1">选项1</el-menu-item>-->
-<!--            <el-menu-item index="3-2">选项2</el-menu-item>-->
-<!--          </el-menu-item-group>-->
-<!--          <el-menu-item-group title="分组2">-->
-<!--            <el-menu-item index="3-3">选项3</el-menu-item>-->
-<!--          </el-menu-item-group>-->
-<!--          <el-submenu index="3-4">-->
-<!--            <template slot="title">选项4</template>-->
-<!--            <el-menu-item index="3-4-1">选项4-1</el-menu-item>-->
-<!--          </el-submenu>-->
-<!--        </el-submenu>-->
+
       </el-menu>
     </el-aside>
 
     <el-container>
-      <el-header style="text-align: left; font-size: 12px; background: white">
+      <el-header style="text-align: left; font-size: 12px; background: rgb(238, 241, 246)">
 
 
-        <el-menu style="text-align: center" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+        <el-menu style="text-align: center; background: rgb(238, 241, 246); border: 0px" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
           <el-row :gutter="20">
-            <el-col :span="10" style="text-align: left">
-              <div>TikTok</div>
-            </el-col>
+<!--            <el-col :span="10" style="text-align: left">-->
+<!--              <div style="width: 100px">a</div>-->
+<!--            </el-col>-->
 
-            <el-col :span="11" style="text-align: left">
+            <el-col :span="13" :offset="8">
               <IndexInput></IndexInput>
             </el-col>
 

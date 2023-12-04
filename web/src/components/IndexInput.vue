@@ -1,18 +1,21 @@
 <template>
-  <el-row :gutter="20">
-    <el-col :span="10">
-      <el-autocomplete
-          class="inline-input"
-          v-model="state1"
-          :fetch-suggestions="querySearch"
-          placeholder="请输入内容"
-          @select="handleSelect"
-      ></el-autocomplete>
-    </el-col>
-    <el-col :span="14">
-      <el-button icon="el-icon-search" circle></el-button>
-    </el-col>
-  </el-row>
+  <div style="width: 250px;">
+    <el-row :gutter="20">
+      <el-col :span="20">
+        <el-autocomplete
+            class="inline-input"
+            v-model="state1"
+            :fetch-suggestions="querySearch"
+            placeholder="请输入内容"
+            @select="handleSelect"
+        ></el-autocomplete>
+      </el-col>
+      <el-col :span="4">
+        <el-button icon="el-icon-search" circle></el-button>
+      </el-col>
+    </el-row>
+  </div>
+
 
 
 </template>
