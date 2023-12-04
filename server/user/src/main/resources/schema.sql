@@ -1,21 +1,18 @@
-CREATE TABLE IF NOT EXISTS `customer` (
-                                          `customer_id` int AUTO_INCREMENT  PRIMARY KEY,
-                                          `name` varchar(100) NOT NULL,
-    `email` varchar(100) NOT NULL,
-    `mobile_number` varchar(20) NOT NULL,
-    `created_at` date NOT NULL,
-    `created_by` varchar(20) NOT NULL,
-    `updated_at` date DEFAULT NULL,
-    `updated_by` varchar(20) DEFAULT NULL
-    );
+-- Users Table
+CREATE TABLE IF NOT EXISTS `Users` (
+    user_id int PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    profile_picture_url VARCHAR(255),
+    bio TEXT,
+    join_date DATETIME,
+    last_login DATETIME
+);
 
-CREATE TABLE IF NOT EXISTS `accounts` (
-                                          `customer_id` int NOT NULL,
-                                          `account_number` int AUTO_INCREMENT  PRIMARY KEY,
-                                          `account_type` varchar(100) NOT NULL,
-    `branch_address` varchar(200) NOT NULL,
-    `created_at` date NOT NULL,
-    `created_by` varchar(20) NOT NULL,
-    `updated_at` date DEFAULT NULL,
-    `updated_by` varchar(20) DEFAULT NULL
-    );
+-- Followers Table
+CREATE TABLE IF NOT EXISTS `Followers` (
+   follower_id int PRIMARY KEY,
+   user_id INT REFERENCES Users(user_id),
+   follower_user_id INT REFERENCES Users(user_id)
+);
