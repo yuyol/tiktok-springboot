@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.security.SecureRandom;
 import java.util.Optional;
 
 @Service
@@ -18,6 +19,10 @@ public class UsersServiceImpl implements UsersService {
 
     @Autowired
     UsersRepository usersRepository;
+
+    private final String CHARACTERS = "0123456789abcdefghijqlmnopqrstuvwxyz";
+    private final int UNIQUE_ID_LENGTH = 11;
+
 
     /**
      * Create User
@@ -31,7 +36,24 @@ public class UsersServiceImpl implements UsersService {
         if (byMobileNumber.isPresent()) return;
 
         Users users = UsersMapper.UsersDtoToUsers(usersDto,new Users());
+
+        // 生成随机unique id
+        String uniqueId = generateUniqueId();
+        Optional<Users> byUniqueId = usersRepository.findByUniqueId(uniqueId.toString());
+        while(byUniqueId.isPresent()) uniqueId = generateUniqueId();
+        users.setUniqueId(uniqueId);
+
         usersRepository.save(users);
+    }
+
+    public String generateUniqueId() {
+        StringBuilder uniqueId = new StringBuilder();
+        SecureRandom random = new SecureRandom();
+        for (int i=0;i<UNIQUE_ID_LENGTH;i++) {
+            int randomIndex = random.nextInt(CHARACTERS.length());
+            uniqueId.append(CHARACTERS.charAt(randomIndex));
+        }
+        return uniqueId.toString();
     }
 
     /**
@@ -59,6 +81,21 @@ public class UsersServiceImpl implements UsersService {
 
         Users user = usersRepository.findByMobileNumber(mobileNumber).orElseThrow(
                 () -> new ResourceNotFoundException("User","Mobile number",mobileNumber)
+        );
+
+        return UsersMapper.UsersToUsersDto(user, new UsersDto());
+    }
+
+    /**
+     * Get User by unique id
+     * @param uniqueId
+     * @return
+     */
+    @Override
+    public UsersDto getUserByUniqueId(String uniqueId) {
+
+        Users user = usersRepository.findByUniqueId(uniqueId).orElseThrow(
+                () -> new ResourceNotFoundException("User", "Unique ID", uniqueId)
         );
 
         return UsersMapper.UsersToUsersDto(user, new UsersDto());

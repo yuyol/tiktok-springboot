@@ -7,6 +7,7 @@ public class UsersMapper {
 
     public static Users UsersDtoToUsers(UsersDto usersDto, Users users) {
         users.setUserId(usersDto.getUserId());
+        users.setUniqueId(usersDto.getUniqueId());
         users.setUsername(usersDto.getUsername());
         users.setEmail(usersDto.getEmail());
         users.setMobileNumber(usersDto.getMobileNumber());
@@ -18,6 +19,7 @@ public class UsersMapper {
 
     public static UsersDto UsersToUsersDto(Users users, UsersDto usersDto) {
         usersDto.setUserId(users.getUserId());
+        usersDto.setUniqueId(users.getUniqueId());
         usersDto.setUsername(users.getUsername());
         usersDto.setEmail(users.getEmail());
         usersDto.setMobileNumber(users.getMobileNumber());

@@ -10,4 +10,6 @@ public interface UsersService {
     UsersDto getUserById(long userId);
 
     UsersDto getUserByMobileNumber(String mobileNumber);
+
+    UsersDto getUserByUniqueId(String uniqueId);
 }

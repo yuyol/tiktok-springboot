@@ -15,6 +15,7 @@ import java.util.Date;
 public class Users {
     @Id
     private int userId;
+    private String uniqueId;
     private String username;
     private String email;
     private String mobileNumber;

@@ -54,4 +54,19 @@ public class UserController {
                 .status(HttpStatus.OK)
                 .body(usersDto);
     }
+
+    /**
+     * Get user detail by unique id
+     * @param uniqueId
+     * @return
+     */
+    @GetMapping("/getUserByUniqueId")
+    public ResponseEntity<UsersDto> getUserByUniqueId(@RequestParam String uniqueId) {
+
+        UsersDto usersDto = usersService.getUserByUniqueId(uniqueId);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(usersDto);
+    }
 }
