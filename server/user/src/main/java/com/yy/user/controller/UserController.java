@@ -2,9 +2,12 @@ package com.yy.user.controller;
 
 import com.yy.user.dto.UsersDto;
 import com.yy.user.service.UsersService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 public class UserController {
@@ -19,8 +22,9 @@ public class UserController {
      * CreateUser
      * @param usersDto
      */
+    @Validated
     @PostMapping("/createUser")
-    public void createUser(@RequestBody UsersDto usersDto) {
+    public void createUser(@RequestBody @Valid UsersDto usersDto) {
 
         usersService.createUser(usersDto);
     }

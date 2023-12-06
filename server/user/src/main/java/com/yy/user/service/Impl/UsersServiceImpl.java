@@ -19,7 +19,6 @@ public class UsersServiceImpl implements UsersService {
 
     @Autowired
     UsersRepository usersRepository;
-
     private final String CHARACTERS = "0123456789abcdefghijqlmnopqrstuvwxyz";
     private final int UNIQUE_ID_LENGTH = 11;
 
