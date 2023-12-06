@@ -99,4 +99,16 @@ public class UsersServiceImpl implements UsersService {
 
         return UsersMapper.UsersToUsersDto(user, new UsersDto());
     }
+
+    /**
+     * Delete User by mobile number
+     * @param mobileNumber
+     */
+    @Override
+    public void deleteUserByMobileNumber(String mobileNumber) {
+        usersRepository.findByMobileNumber(mobileNumber).orElseThrow(
+                () -> new ResourceNotFoundException("User","mobile number",mobileNumber)
+        );
+        usersRepository.deleteByMobileNumber(mobileNumber);
+    }
 }

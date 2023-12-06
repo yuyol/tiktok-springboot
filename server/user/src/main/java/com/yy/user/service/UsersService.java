@@ -12,4 +12,6 @@ public interface UsersService {
     UsersDto getUserByMobileNumber(String mobileNumber);
 
     UsersDto getUserByUniqueId(String uniqueId);
+
+    void deleteUserByMobileNumber(String mobileNumber);
 }

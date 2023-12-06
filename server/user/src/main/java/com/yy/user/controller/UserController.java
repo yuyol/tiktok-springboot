@@ -1,5 +1,7 @@
 package com.yy.user.controller;
 
+import com.yy.user.constants.UsersConstants;
+import com.yy.user.dto.ResponseDto;
 import com.yy.user.dto.UsersDto;
 import com.yy.user.service.UsersService;
 import jakarta.validation.Valid;
@@ -24,9 +26,13 @@ public class UserController {
      */
     @Validated
     @PostMapping("/createUser")
-    public void createUser(@RequestBody @Valid UsersDto usersDto) {
+    public ResponseEntity<ResponseDto> createUser(@RequestBody @Valid UsersDto usersDto) {
 
         usersService.createUser(usersDto);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(new ResponseDto(UsersConstants.STATUS_201, UsersConstants.MESSAGE_201));
     }
 
     /**
@@ -72,5 +78,14 @@ public class UserController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(usersDto);
+    }
+
+    @DeleteMapping("/deleteUserByMobileNumber")
+    public ResponseEntity<ResponseDto> deleteUserByMobileNumber(@RequestParam String mobileNumber) {
+        usersService.deleteUserByMobileNumber(mobileNumber);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(new ResponseDto(UsersConstants.STATUS_200,UsersConstants.MESSAGE_200));
     }
 }
