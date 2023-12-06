@@ -6,4 +6,8 @@ public interface UsersService {
 
 
     void createUser(UsersDto usersDto);
+
+    UsersDto getUserById(long userId);
+
+    UsersDto getUserByMobileNumber(String mobileNumber);
 }

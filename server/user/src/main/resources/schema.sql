@@ -1,8 +1,10 @@
 -- Users Table
 CREATE TABLE IF NOT EXISTS `Users` (
     user_id int PRIMARY KEY,
+    unique_id VARCHAR(255) NOT NULL,
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL,
+    mobile_number VARCHAR(20) NOT NULL,
     password VARCHAR(255) NOT NULL,
     profile_picture_url VARCHAR(255),
     bio TEXT,
