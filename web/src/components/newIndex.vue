@@ -2,9 +2,11 @@
   <el-container>
     <el-header>
       <el-menu
+        lang="scss"
         style="
           text-align: center;
-          background: rgb(238, 241, 246);
+          /* background: rgb(238, 241, 246); */
+          /* background-color: transparent; */
           border: 0px;
           height: 60px;
         "
@@ -29,13 +31,18 @@
       </el-menu>
     </el-header>
 
-    <el-container>
-      <el-aside width="80px">
-        <!-- Aside menu -->
-        <AsideMenu></AsideMenu>
-      </el-aside>
-      <el-main>Video</el-main>
-    </el-container>
+    <div>
+      <div class="dark_bg"></div>
+      <div class="dark_bg_2"></div>
+
+      <el-container style="position: fixed; z-index: 1; width: 100%">
+        <el-aside width="80px">
+          <!-- Aside menu -->
+          <AsideMenu></AsideMenu>
+        </el-aside>
+        <el-main style="color: aliceblue">Video</el-main>
+      </el-container>
+    </div>
   </el-container>
 </template>
 
@@ -68,25 +75,55 @@ export default {
 
 <style>
 .el-header {
-  background-color: #b3c0d1;
-  /* background-color: transparent; */
+  /* background-color: #b3c0d1; */
+  background: url("../assets/background/dark_bg2.png");
+  background-size: cover;
+  background-color: transparent;
   color: #333;
   text-align: center;
-  line-height: 60px;
+  line-height: 58px;
+  border: 0px;
 }
 
 .el-aside {
-  background-color: #d3dce6;
-  color: #333;
+  /* background-color: #d3dce6; */
+  background-color: transparent;
   text-align: center;
   line-height: 200px;
 }
 
 .el-main {
-  background-color: #e9eef3;
+  /* background-color: #e9eef3; */
+  /* background-color: rgba(22, 24, 35); */
+  background-color: transparent;
   color: #333;
   text-align: center;
   line-height: 160px;
+}
+
+.el-menu-demo,
+.el-menu--horizontal,
+.el-menu {
+  background-color: transparent !important;
+  border: 0px !important;
+}
+
+.dark_bg {
+  background-image: url("../assets/background/dark_bg3.png");
+  background-size: cover;
+  width: 100%;
+  height: 44px;
+  z-index: 1;
+  position: fixed;
+}
+
+.dark_bg_2 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  margin-top: 44px;
+  background-color: rgba(22, 24, 35);
 }
 
 /* body > .el-container {

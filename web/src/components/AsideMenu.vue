@@ -8,3 +8,13 @@
     <el-menu-item>我的</el-menu-item>
   </el-menu>
 </template>
+
+<style>
+.el-menu-item {
+  color: white !important;
+}
+
+.el-menu-item:hover {
+  background: black !important;
+}
+</style>
