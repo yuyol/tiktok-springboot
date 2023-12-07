@@ -1,19 +1,17 @@
 <template>
-  <div id="app">
-<!--    <HelloWorld msg="Welcome to Your Vue.js App" />-->
-    <Index></Index>
+  <div id="app" style="margin-top: 0px">
+    <!-- <Index></Index> -->
+    <newIndex></newIndex>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Index from "./components/Index.vue";
+import newIndex from "./components/newIndex.vue";
 
 export default {
   name: "App",
   components: {
-    // HelloWorld
-    Index
+    newIndex,
   },
 };
 </script>
