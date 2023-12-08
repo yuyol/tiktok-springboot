@@ -1,22 +1,22 @@
 <template>
   <el-container>
+    <!-- background z-index: 0-->
+    <div class="test_bg"></div>
+    <div class="dark_bg_2"></div>
     <el-header>
       <el-menu
         lang="scss"
-        style="
-          text-align: center;
-          /* background: rgb(238, 241, 246); */
-          /* background-color: transparent; */
-          border: 0px;
-          height: 60px;
-        "
+        style="text-align: center; border: 0px; height: 60px"
         :default-active="activeIndex"
         class="el-menu-demo"
         mode="horizontal"
         @select="handleSelect"
       >
         <el-row :gutter="20">
-          <el-col :span="13" :offset="8">
+          <el-col :span="5">
+            <div class="icon"></div>
+          </el-col>
+          <el-col :span="13" :offset="3">
             <IndexInput></IndexInput>
           </el-col>
 
@@ -32,8 +32,7 @@
     </el-header>
 
     <div>
-      <div class="dark_bg"></div>
-      <div class="dark_bg_2"></div>
+      <!-- <div class="dark_bg"></div> -->
 
       <el-container style="position: fixed; z-index: 1; width: 100%">
         <el-aside width="80px">
@@ -75,8 +74,7 @@ export default {
 
 <style>
 .el-header {
-  /* background-color: #b3c0d1; */
-  background: url("../assets/background/dark_bg2.png");
+  /* background: url("../assets/background/dark_bg2.png"); */
   background-size: cover;
   background-color: transparent;
   color: #333;
@@ -86,14 +84,13 @@ export default {
 }
 
 .el-aside {
-  /* background-color: #d3dce6; */
   background-color: transparent;
   text-align: center;
   line-height: 200px;
+  margin-top: 20px;
 }
 
 .el-main {
-  /* background-color: #e9eef3; */
   /* background-color: rgba(22, 24, 35); */
   background-color: transparent;
   color: #333;
@@ -108,12 +105,21 @@ export default {
   border: 0px !important;
 }
 
+.test_bg {
+  background-image: url("../assets/background/test.png");
+  background-size: cover;
+  width: 499px;
+  height: 201px;
+  z-index: 1;
+  position: fixed;
+}
+
 .dark_bg {
   background-image: url("../assets/background/dark_bg3.png");
   background-size: cover;
   width: 100%;
   height: 44px;
-  z-index: 1;
+  z-index: 0;
   position: fixed;
 }
 
@@ -122,8 +128,17 @@ export default {
   width: 100%;
   height: 100%;
   z-index: 0;
-  margin-top: 44px;
+  /* margin-top: 44px; */
   background-color: rgba(22, 24, 35);
+}
+
+.icon {
+  background-image: url("../assets/background/icon-white.png");
+  background-size: cover;
+  width: 33px;
+  height: 40px;
+  margin-top: 12px;
+  margin-left: 5px;
 }
 
 /* body > .el-container {
