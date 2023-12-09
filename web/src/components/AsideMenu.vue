@@ -1,31 +1,35 @@
 <template>
   <el-menu :default-openeds="['1', '3']">
-    <el-menu-item style="padding-top: 10px">
-      <div class="index"></div>
-      <div style="margin-top: -20px">首页</div>
-    </el-menu-item>
-    <el-menu-item style="padding-top: 10px">
-      <div class="recommend"></div>
-      <div style="margin-top: -20px">推荐</div>
-    </el-menu-item>
-    <el-menu-item style="padding-top: 10px">
-      <div class="shopping"></div>
-      <div style="margin-top: -20px">商城</div>
-    </el-menu-item>
-    <el-menu-item style="padding-top: 10px">
-      <div class="follow"></div>
-      <div style="margin-top: -20px">关注</div>
-    </el-menu-item>
-    <el-menu-item style="padding-top: 10px">
-      <div class="friends"></div>
-      <div style="margin-top: -20px">朋友</div>
-    </el-menu-item>
-    <el-menu-item style="padding-top: 10px">
-      <div class="my"></div>
-      <div style="margin-top: -20px">我的</div>
+    <el-menu-item
+      v-for="(item, index) in navList"
+      :key="index"
+      :index="item.name"
+      style="padding-top: 10px"
+    >
+      <div :class="item.navClass"></div>
+      <div style="margin-top: -20px">{{ item.navItem }}</div>
     </el-menu-item>
   </el-menu>
 </template>
+
+<script>
+export default {
+  name: "AsideMenu",
+  data() {
+    return {
+      activeIndex: "/index",
+      navList: [
+        { name: "/index", navItem: "首页", navClass: "index" },
+        { name: "/recommend", navItem: "推荐", navClass: "recommend" },
+        { name: "/shopping", navItem: "商城", navClass: "shopping" },
+        { name: "/follow", navItem: "关注", navClass: "follow" },
+        { name: "/friends", navItem: "朋友", navClass: "friends" },
+        { name: "/my", navItem: "我的", navClass: "my" },
+      ],
+    };
+  },
+};
+</script>
 
 <style>
 .index {
@@ -89,6 +93,10 @@
 }
 
 .el-menu-item:hover {
+  background: rgb(255, 255, 255, 0.2) !important;
+}
+
+.el-menu-item:focus {
   background: rgb(255, 255, 255, 0.2) !important;
 }
 </style>
