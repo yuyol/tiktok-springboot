@@ -81,6 +81,10 @@ export default {
   margin-left: 19px;
 }
 
+.el-menu {
+  height: 100%;
+}
+
 .el-menu-item {
   color: white !important;
   padding-left: 0px !important;

@@ -21,11 +21,14 @@
           </el-col>
 
           <el-col :span="3">
-            <el-submenu index="2">
-              <template slot="title">icon</template>
-              <!-- Icon menu -->
-              <IndexIconMenu></IndexIconMenu>
-            </el-submenu>
+            <div style="margin-top: 12px">
+              <el-submenu index="2" class="profileIcon">
+                <!-- <template class="" slot="title">icon</template> -->
+
+                <!-- Icon menu -->
+                <IndexIconMenu></IndexIconMenu>
+              </el-submenu>
+            </div>
           </el-col>
         </el-row>
       </el-menu>
@@ -34,12 +37,16 @@
     <div>
       <!-- <div class="dark_bg"></div> -->
 
-      <el-container style="position: fixed; z-index: 1; width: 100%">
+      <el-container
+        style="position: fixed; z-index: 1; width: 90%; height: 90%"
+      >
         <el-aside width="80px">
           <!-- Aside menu -->
           <AsideMenu></AsideMenu>
         </el-aside>
-        <el-main style="color: aliceblue">Video</el-main>
+        <el-main style="color: aliceblue">
+          <div class="videoFrame">Video</div>
+        </el-main>
       </el-container>
     </div>
   </el-container>
@@ -73,6 +80,13 @@ export default {
 </script>
 
 <style>
+.videoFrame {
+  width: auto;
+  height: 100%;
+  background: black;
+  border-radius: 20px;
+}
+
 .el-header {
   /* background: url("../assets/background/dark_bg2.png"); */
   background-size: cover;
@@ -103,6 +117,13 @@ export default {
 .el-menu {
   background-color: transparent !important;
   border: 0px !important;
+}
+
+.el-submenu__title:hover {
+  background: transparent !important;
+}
+.el-submenu__icon-arrow {
+  color: transparent !important;
 }
 
 .test_bg {
@@ -139,6 +160,15 @@ export default {
   height: 40px;
   margin-top: 12px;
   margin-left: 5px;
+}
+
+.profileIcon {
+  width: 36px !important;
+  height: 36px !important;
+  background: white;
+  border-radius: 50%;
+  background-image: url("../assets/background/profilePic/profile1.jpg");
+  background-size: cover;
 }
 
 /* body > .el-container {
