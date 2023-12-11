@@ -45,7 +45,7 @@
           <AsideMenu></AsideMenu>
         </el-aside>
         <el-main style="color: aliceblue">
-          <div class="videoFrame">Video</div>
+          <Video></Video>
         </el-main>
       </el-container>
     </div>
@@ -56,6 +56,7 @@
 import IndexInput from "@/components/IndexInput.vue";
 import IndexIconMenu from "@/components/IndexIconMenu.vue";
 import AsideMenu from "@/components/AsideMenu.vue";
+import Video from "@/components/Video.vue";
 export default {
   data() {
     return {
@@ -70,6 +71,7 @@ export default {
     IndexInput,
     IndexIconMenu,
     AsideMenu,
+    Video,
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -80,13 +82,6 @@ export default {
 </script>
 
 <style>
-.videoFrame {
-  width: auto;
-  height: 100%;
-  background: black;
-  border-radius: 20px;
-}
-
 .el-header {
   /* background: url("../assets/background/dark_bg2.png"); */
   background-size: cover;

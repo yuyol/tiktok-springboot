@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 500px; height: 200px; background-color: white">
+  <div style="width: 500px; height: 200px; background-color: #20202b">
     <el-row style="text-align: center; margin-top: 10px">
       <el-col :span="6"><el-button>主页</el-button></el-col>
     </el-row>
