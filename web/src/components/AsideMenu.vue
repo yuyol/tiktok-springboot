@@ -6,8 +6,10 @@
       :index="item.name"
       style="padding-top: 10px"
     >
-      <div :class="item.navClass"></div>
-      <div style="margin-top: -20px">{{ item.navItem }}</div>
+      <router-link :to="item.name" style="color: white; text-decoration: none">
+        <div :class="item.navClass"></div>
+        <div style="margin-top: -20px">{{ item.navItem }}</div>
+      </router-link>
     </el-menu-item>
   </el-menu>
 </template>
@@ -73,7 +75,7 @@ export default {
   margin-left: 19px;
 }
 .my {
-  background-image: url("../assets/background/nav/504my.png");
+  background-image: url("../assets/background/nav/2160my.png");
   background-size: cover;
   width: 22px;
   height: 22px;

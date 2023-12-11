@@ -45,7 +45,8 @@
           <AsideMenu></AsideMenu>
         </el-aside>
         <el-main style="color: aliceblue">
-          <Video></Video>
+          <!-- <Video></Video> -->
+          <router-view></router-view>
         </el-main>
       </el-container>
     </div>
