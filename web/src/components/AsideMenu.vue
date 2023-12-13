@@ -35,7 +35,7 @@ export default {
 
 <style>
 .index {
-  background-image: url("../assets/background/nav/0index.png");
+  background-image: url("../assets/nav/0index.png");
   background-size: cover;
   width: 22px;
   height: 22px;
@@ -43,7 +43,7 @@ export default {
   margin-left: 19px;
 }
 .recommend {
-  background-image: url("../assets/background/nav/144recommend.png");
+  background-image: url("../assets/nav/144recommend.png");
   background-size: cover;
   width: 22px;
   height: 22px;
@@ -51,7 +51,7 @@ export default {
   margin-left: 19px;
 }
 .shopping {
-  background-image: url("../assets/background/nav/1872shopping.png");
+  background-image: url("../assets/nav/1872shopping.png");
   background-size: cover;
   width: 22px;
   height: 22px;
@@ -59,7 +59,7 @@ export default {
   margin-left: 19px;
 }
 .follow {
-  background-image: url("../assets/background/nav/288follow.png");
+  background-image: url("../assets/nav/288follow.png");
   background-size: cover;
   width: 22px;
   height: 22px;
@@ -67,7 +67,7 @@ export default {
   margin-left: 19px;
 }
 .friends {
-  background-image: url("../assets/background/nav/432friend.png");
+  background-image: url("../assets/nav/432friend.png");
   background-size: cover;
   width: 22px;
   height: 22px;
@@ -75,7 +75,7 @@ export default {
   margin-left: 19px;
 }
 .my {
-  background-image: url("../assets/background/nav/2160my.png");
+  background-image: url("../assets/nav/2160my.png");
   background-size: cover;
   width: 22px;
   height: 22px;

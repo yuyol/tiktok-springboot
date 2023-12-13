@@ -57,7 +57,8 @@
 import IndexInput from "@/components/IndexInput.vue";
 import IndexIconMenu from "@/components/IndexIconMenu.vue";
 import AsideMenu from "@/components/AsideMenu.vue";
-import Video from "@/components/Video.vue";
+// import Video from "@/components/Video.vue";
+import Swiper from "@/components/Swiper.vue";
 export default {
   data() {
     return {
@@ -72,7 +73,8 @@ export default {
     IndexInput,
     IndexIconMenu,
     AsideMenu,
-    Video,
+    // Video,
+    Swiper,
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -127,7 +129,7 @@ export default {
   background-size: cover;
   width: 499px;
   height: 201px;
-  z-index: 1;
+  z-index: 0;
   position: fixed;
 }
 
@@ -136,7 +138,7 @@ export default {
   background-size: cover;
   width: 100%;
   height: 44px;
-  z-index: 0;
+  z-index: -1;
   position: fixed;
 }
 
@@ -144,7 +146,7 @@ export default {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: -1;
   /* margin-top: 44px; */
   background-color: rgba(22, 24, 35);
 }
@@ -163,7 +165,7 @@ export default {
   height: 36px !important;
   background: white;
   border-radius: 50%;
-  background-image: url("../assets/background/profilePic/profile1.jpg");
+  background-image: url("../assets/profilePic/profile1.jpg");
   background-size: cover;
 }
 
