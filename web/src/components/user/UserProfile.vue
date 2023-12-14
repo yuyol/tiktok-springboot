@@ -193,6 +193,8 @@
 </style>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "UserProfile",
   data() {
@@ -206,6 +208,15 @@ export default {
         notes: "hello I am yy",
       },
     };
+  },
+  mounted: function () {
+    axios
+      .get(
+        "http://localhost:8081/getUserByMobileNumber?mobileNumber=18807569888"
+      )
+      .then(function (res) {
+        console.log(res.data);
+      });
   },
 };
 </script>
