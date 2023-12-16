@@ -1,9 +1,11 @@
 package com.yy.user.service.Impl;
 
+import com.yy.user.dto.FollowersDto;
 import com.yy.user.dto.UsersDto;
 import com.yy.user.entity.Users;
 import com.yy.user.exception.ResourceNotFoundException;
 import com.yy.user.mapper.UsersMapper;
+import com.yy.user.repository.FollowersRepository;
 import com.yy.user.repository.UsersRepository;
 import com.yy.user.service.UsersService;
 import lombok.AllArgsConstructor;
@@ -11,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +22,9 @@ public class UsersServiceImpl implements UsersService {
 
     @Autowired
     UsersRepository usersRepository;
+
+    @Autowired
+    FollowersRepository followersRepository;
     private final String CHARACTERS = "0123456789abcdefghijqlmnopqrstuvwxyz";
     private final int UNIQUE_ID_LENGTH = 11;
 
@@ -82,6 +88,14 @@ public class UsersServiceImpl implements UsersService {
                 () -> new ResourceNotFoundException("User","Mobile number",mobileNumber)
         );
 
+        // 获取粉丝数量
+
+        // 获取粉丝列表
+
+        // 获取关注列表
+
+        // 填充followersDto
+
         return UsersMapper.UsersToUsersDto(user, new UsersDto());
     }
 
@@ -110,5 +124,20 @@ public class UsersServiceImpl implements UsersService {
                 () -> new ResourceNotFoundException("User","mobile number",mobileNumber)
         );
         usersRepository.deleteByMobileNumber(mobileNumber);
+    }
+
+    @Override
+    public FollowersDto getFollowers(int userId) {
+        FollowersDto followersDto = new FollowersDto();
+
+        Optional<List<Users>> users = usersRepository.searchFollowersByUserId(userId);
+        List<Users> followers = users.get();
+
+        int followerAmount = followersRepository.followersCount(userId);
+
+        followersDto.setFollowers(followers);
+        followersDto.setFollowerAmount(followerAmount);
+
+        return followersDto;
     }
 }

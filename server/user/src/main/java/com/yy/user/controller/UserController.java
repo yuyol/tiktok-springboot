@@ -1,10 +1,13 @@
 package com.yy.user.controller;
 
 import com.yy.user.constants.UsersConstants;
+import com.yy.user.dto.FollowersDto;
 import com.yy.user.dto.ResponseDto;
 import com.yy.user.dto.UsersDto;
+import com.yy.user.service.FollowersService;
 import com.yy.user.service.UsersService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -17,9 +20,15 @@ public class UserController {
 
     private final UsersService usersService;
 
-    public UserController(UsersService usersService) {
+    private final FollowersService followersService;
+
+
+    public UserController(UsersService usersService,FollowersService followersService) {
         this.usersService = usersService;
+        this.followersService = followersService;
     }
+
+
 
     /**
      * CreateUser
@@ -88,5 +97,24 @@ public class UserController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(new ResponseDto(UsersConstants.STATUS_200,UsersConstants.MESSAGE_200));
+    }
+
+    /**
+     *
+     * @param userId
+     * @return
+     */
+    @GetMapping("/getFollowersAmount")
+    public int getFollows(@RequestParam int userId) {
+        int count = followersService.followersCount(userId);
+        return count;
+    }
+
+    @GetMapping("/getFollowersDto")
+    public ResponseEntity<FollowersDto> getFollowers(@RequestParam int userId) {
+        FollowersDto followersDto = usersService.getFollowers(userId);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(followersDto);
     }
 }

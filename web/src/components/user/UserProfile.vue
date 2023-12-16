@@ -6,27 +6,27 @@
       </div>
       <div style="display: flex">
         <div class="profile-text-frame">
-          <div class="profile-username">{{ user.username }}</div>
+          <div class="profile-username">{{ userData.username }}</div>
           <div class="profile-follow">
             <div style="color: rgb(255, 255, 255, 0.7)">关注</div>
-            <div>{{ user.follows }}</div>
+            <div>{{ userData.follows }}</div>
             <div style="color: rgb(255, 255, 255, 0.7); margin-left: 30px">
               粉丝
             </div>
-            <div>{{ user.followers }}</div>
+            <div>{{ userData.followers }}</div>
             <div style="color: rgb(255, 255, 255, 0.7); margin-left: 30px">
               获赞
             </div>
-            <div>{{ user.liked }}</div>
+            <div>{{ userData.liked }}</div>
           </div>
           <div class="profile-intro">
             <div style="color: rgb(255, 255, 255, 0.7)">抖音号:</div>
             <div style="color: rgb(255, 255, 255, 0.7)">
-              {{ user.uniqueId }}
+              {{ userData.uniqueId }}
             </div>
           </div>
           <div class="profile-intro">
-            <span>{{ user.notes }}</span>
+            <span>{{ userData.text }}</span>
           </div>
         </div>
         <div class="profile-right-frame">
@@ -193,29 +193,25 @@
 </style>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 
 export default {
   name: "UserProfile",
   data() {
     return {
-      user: {
-        username: "小猫借我玩两天",
-        uniqueId: "abcdefghij",
-        follows: 445,
-        followers: 71,
-        liked: 588,
-        notes: "hello I am yy",
-      },
+      userData: [],
     };
   },
   mounted: function () {
-    axios
-      .get(
-        "http://localhost:8081/getUserByMobileNumber?mobileNumber=18807569888"
-      )
-      .then(function (res) {
+    this.$http
+      .get("http://localhost:8081/getUserByMobileNumber", {
+        params: {
+          mobileNumber: 18807569888,
+        },
+      })
+      .then((res) => {
         console.log(res.data);
+        this.userData = res.data;
       });
   },
 };
