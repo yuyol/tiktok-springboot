@@ -25,8 +25,11 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
     int searchUserIdByUniqueId(@Param("uniqueId")String unique_id);
 
     /**
-     * 搜索用户i的所有粉丝
+     * 搜索user id的所有粉丝
      */
     @Query(nativeQuery = true, value = "SELECT u.* FROM Users AS u, Followers AS f WHERE f.user_id = :userId AND u.user_id = f.follower_user_id")
     Optional<List<Users>> searchFollowersByUserId(@Param("userId") int userId);
+
+    @Query(nativeQuery = true, value = "SELECT u.* FROM Users AS u, Followers AS f WHERE f.follower_user_id = :userId AND u.user_id = f.user_id")
+    Optional<List<Users>> searchFollowsByUserId(@Param("userId") int userId);
 }

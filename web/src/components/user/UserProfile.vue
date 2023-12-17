@@ -9,11 +9,11 @@
           <div class="profile-username">{{ userData.username }}</div>
           <div class="profile-follow">
             <div style="color: rgb(255, 255, 255, 0.7)">关注</div>
-            <div>{{ userData.follows }}</div>
+            <div>{{ userData.followersDto.followAmount }}</div>
             <div style="color: rgb(255, 255, 255, 0.7); margin-left: 30px">
               粉丝
             </div>
-            <div>{{ userData.followers }}</div>
+            <div>{{ userData.followersDto.followerAmount }}</div>
             <div style="color: rgb(255, 255, 255, 0.7); margin-left: 30px">
               获赞
             </div>
@@ -206,6 +206,7 @@ export default {
     this.$http
       .get("http://localhost:8081/getUserByMobileNumber", {
         params: {
+          // 以后改成动态获取
           mobileNumber: 18807569888,
         },
       })

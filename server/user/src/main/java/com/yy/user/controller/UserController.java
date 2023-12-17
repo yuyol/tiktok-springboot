@@ -110,6 +110,11 @@ public class UserController {
         return count;
     }
 
+    /**
+     * 获取FollowerDto
+     * @param userId
+     * @return
+     */
     @GetMapping("/getFollowersDto")
     public ResponseEntity<FollowersDto> getFollowers(@RequestParam int userId) {
         FollowersDto followersDto = usersService.getFollowers(userId);

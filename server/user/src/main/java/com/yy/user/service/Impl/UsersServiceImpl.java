@@ -31,6 +31,7 @@ public class UsersServiceImpl implements UsersService {
 
     /**
      * Create User
+     *
      * @param usersDto
      */
     @Override
@@ -40,12 +41,12 @@ public class UsersServiceImpl implements UsersService {
 
         if (byMobileNumber.isPresent()) return;
 
-        Users users = UsersMapper.UsersDtoToUsers(usersDto,new Users());
+        Users users = UsersMapper.UsersDtoToUsers(usersDto, new Users());
 
         // 生成随机unique id
         String uniqueId = generateUniqueId();
         Optional<Users> byUniqueId = usersRepository.findByUniqueId(uniqueId.toString());
-        while(byUniqueId.isPresent()) uniqueId = generateUniqueId();
+        while (byUniqueId.isPresent()) uniqueId = generateUniqueId();
         users.setUniqueId(uniqueId);
 
         usersRepository.save(users);
@@ -54,7 +55,7 @@ public class UsersServiceImpl implements UsersService {
     public String generateUniqueId() {
         StringBuilder uniqueId = new StringBuilder();
         SecureRandom random = new SecureRandom();
-        for (int i=0;i<UNIQUE_ID_LENGTH;i++) {
+        for (int i = 0; i < UNIQUE_ID_LENGTH; i++) {
             int randomIndex = random.nextInt(CHARACTERS.length());
             uniqueId.append(CHARACTERS.charAt(randomIndex));
         }
@@ -63,6 +64,7 @@ public class UsersServiceImpl implements UsersService {
 
     /**
      * Get User by user id
+     *
      * @param userId
      * @return
      */
@@ -70,7 +72,7 @@ public class UsersServiceImpl implements UsersService {
     public UsersDto getUserById(long userId) {
 
         Users user = usersRepository.findByUserId(userId).orElseThrow(
-                () -> new ResourceNotFoundException("User","user id", String.valueOf(userId))
+                () -> new ResourceNotFoundException("User", "user id", String.valueOf(userId))
         );
 
         return UsersMapper.UsersToUsersDto(user, new UsersDto());
@@ -78,6 +80,7 @@ public class UsersServiceImpl implements UsersService {
 
     /**
      * Get User by mobile number
+     *
      * @param mobileNumber
      * @return
      */
@@ -85,22 +88,50 @@ public class UsersServiceImpl implements UsersService {
     public UsersDto getUserByMobileNumber(String mobileNumber) {
 
         Users user = usersRepository.findByMobileNumber(mobileNumber).orElseThrow(
-                () -> new ResourceNotFoundException("User","Mobile number",mobileNumber)
+                () -> new ResourceNotFoundException("User", "Mobile number", mobileNumber)
         );
+        UsersDto usersDto = UsersMapper.UsersToUsersDto(user, new UsersDto());
+        // 获取followersDto
+        FollowersDto followersDto = getFollowers(user.getUserId());
+        // 填充UsersDto
+        usersDto.setFollowersDto(followersDto);
+        return usersDto;
+    }
 
-        // 获取粉丝数量
+    /**
+     * 获取FollowersDto
+     * 粉丝数，粉丝集合
+     * 关注数，关注集合
+     *
+     * @param userId
+     * @return
+     */
+    @Override
+    public FollowersDto getFollowers(int userId) {
+        FollowersDto followersDto = new FollowersDto();
+        // 获取粉丝集合
+        Optional<List<Users>> followerUsers = usersRepository.searchFollowersByUserId(userId);
+        List<Users> followers = followerUsers.get();
+        // 获取粉丝数
+        int followerAmount = followersRepository.followersCount(userId);
+        // 获取关注集合
+        Optional<List<Users>> followUsers = usersRepository.searchFollowsByUserId(userId);
+        List<Users> follows = followUsers.get();
+        // 获取关注数
+        int followAmount = followersRepository.followsCount(userId);
 
-        // 获取粉丝列表
+        // 填充Dto
+        followersDto.setFollowers(followers);
+        followersDto.setFollowerAmount(followerAmount);
+        followersDto.setFollows(follows);
+        followersDto.setFollowAmount(followAmount);
 
-        // 获取关注列表
-
-        // 填充followersDto
-
-        return UsersMapper.UsersToUsersDto(user, new UsersDto());
+        return followersDto;
     }
 
     /**
      * Get User by unique id
+     *
      * @param uniqueId
      * @return
      */
@@ -116,28 +147,16 @@ public class UsersServiceImpl implements UsersService {
 
     /**
      * Delete User by mobile number
+     *
      * @param mobileNumber
      */
     @Override
     public void deleteUserByMobileNumber(String mobileNumber) {
         usersRepository.findByMobileNumber(mobileNumber).orElseThrow(
-                () -> new ResourceNotFoundException("User","mobile number",mobileNumber)
+                () -> new ResourceNotFoundException("User", "mobile number", mobileNumber)
         );
         usersRepository.deleteByMobileNumber(mobileNumber);
     }
 
-    @Override
-    public FollowersDto getFollowers(int userId) {
-        FollowersDto followersDto = new FollowersDto();
 
-        Optional<List<Users>> users = usersRepository.searchFollowersByUserId(userId);
-        List<Users> followers = users.get();
-
-        int followerAmount = followersRepository.followersCount(userId);
-
-        followersDto.setFollowers(followers);
-        followersDto.setFollowerAmount(followerAmount);
-
-        return followersDto;
-    }
 }
