@@ -76,7 +76,7 @@ public class UserController {
     }
 
     /**
-     * Get user detail by unique id
+     * 使用uniqueId获取用户
      * @param uniqueId
      * @return
      */
@@ -90,6 +90,11 @@ public class UserController {
                 .body(usersDto);
     }
 
+    /**
+     * 使用手机号删除用户
+     * @param mobileNumber
+     * @return
+     */
     @DeleteMapping("/deleteUserByMobileNumber")
     public ResponseEntity<ResponseDto> deleteUserByMobileNumber(@RequestParam String mobileNumber) {
         usersService.deleteUserByMobileNumber(mobileNumber);
@@ -100,7 +105,7 @@ public class UserController {
     }
 
     /**
-     *
+     * 获取用户粉丝数
      * @param userId
      * @return
      */

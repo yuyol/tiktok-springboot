@@ -33,8 +33,4 @@ public class FollowersController {
                 .body(new ResponseDto(FollowersConstants.STATUS_201,FollowersConstants.MESSAGE_201));
     }
 
-    @GetMapping("/getUserId")
-    public int getUserId(@RequestParam String uniqueId) {
-        return followersService.getUserId(uniqueId);
-    }
 }
