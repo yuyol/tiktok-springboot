@@ -43,25 +43,58 @@
           <div class="user-tabbar-inner">
             <div class="user-tabber-inner-left">
               <!-- will be changed to router link -->
-              <div class="user-works">
-                <button class="user-tabbar-button">作品</button>
-              </div>
-              <div class="user-works">
-                <button class="user-tabbar-button">喜欢</button>
-              </div>
-              <div class="user-works">
-                <button class="user-tabbar-button">收藏</button>
-              </div>
-              <div class="user-works">
-                <button class="user-tabbar-button">观看历史</button>
-              </div>
+              <router-link
+                v-for="(item, index) in userTabBarList"
+                :key="index"
+                :to="item.name"
+                class="router_link_style"
+              >
+                <div class="user-works">
+                  <button class="user-tabbar-button">{{ item.navItem }}</button>
+                </div></router-link
+              >
             </div>
           </div>
         </div>
       </div>
+      <!-- router -->
+      <router-view></router-view>
     </div>
   </div>
 </template>
+
+<script>
+// import axios from "axios";
+
+export default {
+  name: "UserProfile",
+  data() {
+    return {
+      userData: [],
+      userTabBarList: [
+        { name: "/user/works", navItem: "作品" },
+        { name: "/user/likes", navItem: "喜欢" },
+        { name: "/user/collection", navItem: "收藏" },
+        { name: "/user/history", navItem: "观看历史" },
+        { name: "/user/creation", navItem: "创作中心" },
+      ],
+    };
+  },
+  mounted: function () {
+    this.$http
+      .get("http://localhost:8081/getUserByMobileNumber", {
+        params: {
+          // 以后改成动态获取
+          mobileNumber: 18807569888,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        this.userData = res.data;
+      });
+  },
+};
+</script>
 
 <style>
 .user-tabbar-button {
@@ -97,9 +130,9 @@
 .user-bottom-content-frame {
   margin: 0 auto;
   margin-top: 0px;
-  margin-right: 60px;
+  margin-right: 30px;
   margin-bottom: 0px;
-  margin-left: 60px;
+  margin-left: 30px;
 }
 .user-bottom {
   background: linear-gradient(
@@ -191,29 +224,3 @@
   width: 100%;
 }
 </style>
-
-<script>
-// import axios from "axios";
-
-export default {
-  name: "UserProfile",
-  data() {
-    return {
-      userData: [],
-    };
-  },
-  mounted: function () {
-    this.$http
-      .get("http://localhost:8081/getUserByMobileNumber", {
-        params: {
-          // 以后改成动态获取
-          mobileNumber: 18807569888,
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        this.userData = res.data;
-      });
-  },
-};
-</script>
