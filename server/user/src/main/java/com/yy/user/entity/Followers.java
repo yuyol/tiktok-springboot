@@ -15,7 +15,7 @@ import lombok.*;
 public class Followers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    private int followerId;
-    private int userId;
-    private int followerUserId;
+    private long followerId;
+    private long userId;
+    private long followerUserId;
 }

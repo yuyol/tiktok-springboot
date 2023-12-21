@@ -17,12 +17,12 @@ public interface FollowersRepository extends JpaRepository<Followers, Long> {
      * @return
      */
     @Query(nativeQuery = true,value = "select count(*) from Followers where FOLLOWER_USER_ID = :userId")
-    int followersCount(@Param("userId") Integer userId);
+    int followersCount(@Param("userId") Long userId);
 
     @Query(nativeQuery = true,value = "select count(*) from Followers where USER_ID = :userId")
-    int followsCount(@Param("userId") Integer userId);
+    int followsCount(@Param("userId") Long userId);
 
     @Query(nativeQuery = true, value = "select count(*) from Followers AS f where f.user_id = :userId and f.follower_user_id = :followerUserId")
-    int findIfRepeat(@Param("userId") Integer userId, @Param("followerUserId") Integer followerUserId);
+    int findIfRepeat(@Param("userId") Long userId, @Param("followerUserId") Long followerUserId);
 
 }

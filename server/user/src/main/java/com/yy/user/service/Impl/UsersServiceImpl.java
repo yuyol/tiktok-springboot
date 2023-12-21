@@ -107,7 +107,7 @@ public class UsersServiceImpl implements UsersService {
      * @return
      */
     @Override
-    public FollowersDto getFollowers(int userId) {
+    public FollowersDto getFollowers(long userId) {
         FollowersDto followersDto = new FollowersDto();
         // 获取粉丝集合
         Optional<List<Users>> followerUsers = usersRepository.searchFollowersByUserId(userId);

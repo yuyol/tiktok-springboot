@@ -28,8 +28,8 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
      * 搜索user id的所有粉丝
      */
     @Query(nativeQuery = true, value = "SELECT u.* FROM Users AS u, Followers AS f WHERE f.user_id = :userId AND u.user_id = f.follower_user_id")
-    Optional<List<Users>> searchFollowersByUserId(@Param("userId") int userId);
+    Optional<List<Users>> searchFollowersByUserId(@Param("userId") long userId);
 
     @Query(nativeQuery = true, value = "SELECT u.* FROM Users AS u, Followers AS f WHERE f.follower_user_id = :userId AND u.user_id = f.user_id")
-    Optional<List<Users>> searchFollowsByUserId(@Param("userId") int userId);
+    Optional<List<Users>> searchFollowsByUserId(@Param("userId") long userId);
 }

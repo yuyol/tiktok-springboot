@@ -20,7 +20,7 @@ import java.util.Date;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
-    private int userId;
+    private Long userId;
     private String uniqueId;
     private String username;
     @Email(message = "请输入正确邮箱地址")

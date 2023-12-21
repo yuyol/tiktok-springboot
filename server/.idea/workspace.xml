@@ -5,23 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/UserApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user/src/test/java/com/yy/user/UserApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_3_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring6_3_1_2_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/VideoApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/dto/ResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/dto/VideosDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/entity/Videos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/exception/FileAlreadyExistedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/test/java/com/yy/video/VideoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/dto/UsersDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/dto/UsersDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/entity/Followers.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/entity/Followers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/entity/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/exception/AlreadyFollowedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/exception/AlreadyFollowedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/repository/FollowersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/repository/FollowersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/repository/UsersRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/FollowersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/FollowersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/Impl/FollowersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/Impl/FollowersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/Impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/Impl/UsersServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/UsersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/user/Creation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/user/Creation.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -31,24 +72,44 @@
     </option>
   </component>
   <component name="ProjectId" id="2YsyRsfUflcZJyi2gcymhryY70b" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/programming/project/tiktok",
+    "jdk.selected.JAVA_MODULE": "openjdk-20",
+    "last_opened_file_path": "D:/programming/project/tiktok/server",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "dd35d645beebf6babd9fc723224de828",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.VideoApplication">
     <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="user" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.yy.user.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VideoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="video" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yy.video.VideoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -63,6 +124,8 @@
       <option name="presentableId" value="Default" />
       <updated>1701328576372</updated>
       <workItem from="1701328577530" duration="25000" />
+      <workItem from="1703101173226" duration="21671000" />
+      <workItem from="1703187529859" duration="1116000" />
     </task>
     <servers />
   </component>
@@ -79,5 +142,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

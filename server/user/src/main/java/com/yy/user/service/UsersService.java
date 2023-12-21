@@ -16,5 +16,5 @@ public interface UsersService {
 
     void deleteUserByMobileNumber(String mobileNumber);
 
-    FollowersDto getFollowers(int userId);
+    FollowersDto getFollowers(long userId);
 }

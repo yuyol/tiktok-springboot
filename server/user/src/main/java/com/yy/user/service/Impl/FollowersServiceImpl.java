@@ -25,7 +25,7 @@ public class FollowersServiceImpl implements FollowersService {
      * @return
      */
     @Override
-    public int followersCount(int userId) {
+    public int followersCount(long userId) {
         int count = followersRepository.followersCount(userId);
         return count;
     }
@@ -47,8 +47,8 @@ public class FollowersServiceImpl implements FollowersService {
      */
     @Override
     public void follow(String followerUserUniqueId, String followUserUniqueId) {
-        int followerUserId = usersRepository.searchUserIdByUniqueId(followerUserUniqueId);
-        int userId = usersRepository.searchUserIdByUniqueId(followUserUniqueId);
+        long followerUserId = usersRepository.searchUserIdByUniqueId(followerUserUniqueId);
+        long userId = usersRepository.searchUserIdByUniqueId(followUserUniqueId);
         if(followersRepository.findIfRepeat(userId,followerUserId) != 0) {
             throw new AlreadyFollowedException(userId,followerUserId);
         }

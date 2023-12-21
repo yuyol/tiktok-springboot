@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface FollowersService {
-    int followersCount(int userId);
+    int followersCount(long userId);
 
     void follow(String followerUserUniqueId, String followUserUniqueId);
 
