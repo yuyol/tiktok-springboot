@@ -4,56 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_7_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_3_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring6_3_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/VideoApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/dto/ResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/dto/VideosDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/entity/Videos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/exception/FileAlreadyExistedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/resources/schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/test/java/com/yy/video/VideoApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="Add Video microservice">
+      <change afterPath="$PROJECT_DIR$/Roblox VR 2023.03.18 - 09.54.24.01.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/service/Impl/VideosServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/service/VideosService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/dto/UsersDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/dto/UsersDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/entity/Followers.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/entity/Followers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/entity/Users.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/entity/Users.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/exception/AlreadyFollowedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/exception/AlreadyFollowedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/repository/FollowersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/repository/FollowersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/repository/UsersRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/repository/UsersRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/FollowersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/FollowersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/Impl/FollowersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/Impl/FollowersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/Impl/UsersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/Impl/UsersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/UsersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/java/com/yy/user/service/UsersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/user/Creation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/user/Creation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -79,26 +48,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "openjdk-20",
-    "last_opened_file_path": "D:/programming/project/tiktok/server",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "dd35d645beebf6babd9fc723224de828",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/programming/project/tiktok/server&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propCompiler&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;dd35d645beebf6babd9fc723224de828&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.VideoApplication">
     <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="user" />
@@ -125,8 +95,18 @@
       <updated>1701328576372</updated>
       <workItem from="1701328577530" duration="25000" />
       <workItem from="1703101173226" duration="21671000" />
-      <workItem from="1703187529859" duration="1116000" />
+      <workItem from="1703187529859" duration="4981000" />
+      <workItem from="1703198018356" duration="7713000" />
+      <workItem from="1703452285536" duration="638000" />
     </task>
+    <task id="LOCAL-00001" summary="Add Video microservice">
+      <created>1703190004373</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703190004373</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,5 +125,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add Video microservice" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Video microservice" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

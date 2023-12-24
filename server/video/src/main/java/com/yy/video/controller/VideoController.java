@@ -3,6 +3,8 @@ package com.yy.video.controller;
 import com.yy.video.dto.VideosDto;
 import com.yy.video.entity.Videos;
 import com.yy.video.exception.FileAlreadyExistedException;
+import com.yy.video.service.VideosService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,8 +24,16 @@ public class VideoController {
 
     // 设置保存视频文件的目录
     private static final String VIDEO_UPLOAD_DIR = "D:/upload";
+
+    private final VideosService videosService;
+
+    public VideoController(VideosService videosService) {
+        this.videosService = videosService;
+    }
     @PostMapping("/upload")
     public ResponseEntity<VideosDto> uploadVideo(@RequestParam("file") MultipartFile file) {
+
+        /*
         try {
             // 获取上传的文件名
             String fileName = file.getOriginalFilename();
@@ -59,6 +69,16 @@ public class VideoController {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(new VideosDto());
+        }*/
+
+        VideosDto videosDto = null;
+        try {
+            videosDto = videosService.uploadVideo(file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(videosDto);
     }
 }
