@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="Add Video microservice">
-      <change afterPath="$PROJECT_DIR$/Roblox VR 2023.03.18 - 09.54.24.01.mp4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/service/Impl/VideosServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/service/VideosService.java" afterDir="false" />
+    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="Upload Video">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java" afterDir="false" />
     </list>
@@ -97,7 +94,8 @@
       <workItem from="1703101173226" duration="21671000" />
       <workItem from="1703187529859" duration="4981000" />
       <workItem from="1703198018356" duration="7713000" />
-      <workItem from="1703452285536" duration="638000" />
+      <workItem from="1703452285536" duration="1286000" />
+      <workItem from="1703525592825" duration="6370000" />
     </task>
     <task id="LOCAL-00001" summary="Add Video microservice">
       <created>1703190004373</created>
@@ -106,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703190004373</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Upload Video">
+      <created>1703453079981</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703453079981</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,17 +131,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add Video microservice" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Video microservice" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Upload Video" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload Video" />
   </component>
 </project>

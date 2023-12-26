@@ -4,13 +4,11 @@ import com.yy.video.dto.VideosDto;
 import com.yy.video.entity.Videos;
 import com.yy.video.exception.FileAlreadyExistedException;
 import com.yy.video.service.VideosService;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -79,6 +77,15 @@ public class VideoController {
         }
 
         return ResponseEntity.status(HttpStatus.CREATED)
+                .body(videosDto);
+    }
+
+    @GetMapping("/getVideo")
+    public ResponseEntity<VideosDto> getVideo() {
+        VideosDto videosDto = new VideosDto();
+        videosDto.setUrl("https://yybucket1-1317394054.cos.na-siliconvalley.myqcloud.com/videos%2F20231221151822_Roblox%20VR%202023.03.18%20-%2009.54.24.01.mp4");
+        return ResponseEntity
+                .status(HttpStatus.OK)
                 .body(videosDto);
     }
 }
