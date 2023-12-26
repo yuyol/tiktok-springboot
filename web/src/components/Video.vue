@@ -9,7 +9,16 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide">
-          <div class="VideoPart">Video 1</div>
+          <div class="VideoPart">
+            <video
+              v-if="videoForm.showVideoPath != '' && !videoFlag"
+              v-bind:src="videoForm.showVideoPath"
+              class="videoContent"
+              controls="controls"
+            >
+              您的浏览器不支持视频播放
+            </video>
+          </div>
           <div class="commentSec">Comment 1</div>
         </div>
         <div class="swiper-slide">
@@ -38,6 +47,9 @@ export default {
         },
         // Some Swiper option/callback...
       },
+      videoForm: {
+        showVideoPath: "",
+      },
     };
   },
   computed: {
@@ -51,6 +63,15 @@ export default {
       loop: false, // 循环模式选项
       mousewheel: true,
     });
+    this.getVideo();
+  },
+  methods: {
+    getVideo() {
+      this.$http.get("http://localhost:8091/getVideo").then((res) => {
+        console.log(res.data.url);
+        this.videoForm.showVideoPath = res.data.url;
+      });
+    },
   },
 };
 </script>
@@ -62,6 +83,9 @@ export default {
   background: black;
   border-radius: 20px;
   display: flex;
+}
+.videoContent {
+  width: 100%;
 }
 
 .swiper-container {
