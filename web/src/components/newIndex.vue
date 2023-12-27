@@ -21,11 +21,9 @@
           </el-col>
 
           <el-col :span="3">
-            <div style="margin-top: 12px">
-              <el-submenu index="2" class="profileIcon">
-                <!-- <template class="" slot="title">icon</template> -->
-
-                <!-- Icon menu -->
+            <div style="margin-top: 12px; text-align: left">
+              <button class="loginRegister" :style="loginStyle"></button>
+              <el-submenu index="2" class="profileIcon" :style="iconStlye">
                 <IndexIconMenu></IndexIconMenu>
               </el-submenu>
             </div>
@@ -67,6 +65,12 @@ export default {
       restaurants: [],
       state1: "",
       state2: "",
+      loginStyle: {
+        display: "block",
+      },
+      iconStlye: {
+        display: "none",
+      },
     };
   },
   components: {
@@ -80,6 +84,15 @@ export default {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
+    checkIfLogin() {
+      if (sessionStorage.getItem("token") != null) {
+        this.iconStlye.display = "block";
+        this.loginStyle.display = "none";
+      }
+    },
+  },
+  mounted() {
+    this.checkIfLogin();
   },
 };
 </script>
@@ -167,6 +180,17 @@ export default {
   border-radius: 50%;
   background-image: url("../assets/profilePic/profile1.jpg");
   background-size: cover;
+}
+
+.loginRegister {
+  width: 36px !important;
+  height: 36px !important;
+  background: white;
+  border-radius: 50%;
+  background-image: url("../assets/profilePic/profile1.jpg");
+  background-size: cover;
+  border: 0px;
+  cursor: pointer;
 }
 
 /* body > .el-container {

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="推荐页面嵌入视频" />
+    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="推荐页面嵌入视频">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/video/src/main/java/com/yy/video/controller/VideoController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -92,7 +96,9 @@
       <workItem from="1703187529859" duration="4981000" />
       <workItem from="1703198018356" duration="7713000" />
       <workItem from="1703452285536" duration="1286000" />
-      <workItem from="1703525592825" duration="7063000" />
+      <workItem from="1703525592825" duration="8488000" />
+      <workItem from="1703596483178" duration="2748000" />
+      <workItem from="1703613639313" duration="1613000" />
     </task>
     <task id="LOCAL-00001" summary="Add Video microservice">
       <created>1703190004373</created>
@@ -115,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703557101738</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="推荐页面嵌入视频">
+      <created>1703557135009</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703557135009</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

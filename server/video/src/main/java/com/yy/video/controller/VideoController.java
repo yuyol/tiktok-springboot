@@ -80,9 +80,14 @@ public class VideoController {
                 .body(videosDto);
     }
 
+    /**
+     * 获取视频
+     * @return
+     */
     @GetMapping("/getVideo")
     public ResponseEntity<VideosDto> getVideo() {
         VideosDto videosDto = new VideosDto();
+        // 未来将从Redis中获取
         videosDto.setUrl("https://yybucket1-1317394054.cos.na-siliconvalley.myqcloud.com/videos%2F20231221151822_Roblox%20VR%202023.03.18%20-%2009.54.24.01.mp4");
         return ResponseEntity
                 .status(HttpStatus.OK)

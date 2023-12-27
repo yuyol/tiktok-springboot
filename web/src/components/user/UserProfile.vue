@@ -81,6 +81,9 @@ export default {
     };
   },
   mounted: function () {
+    // sessionStorage.setItem("token", "12345");
+    // console.log(sessionStorage.getItem("token"));
+    // router.push({ path: "/" });
     this.$http
       .get("http://localhost:8081/getUserByMobileNumber", {
         params: {

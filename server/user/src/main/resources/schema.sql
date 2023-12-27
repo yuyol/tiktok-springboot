@@ -13,6 +13,8 @@ CREATE TABLE IF NOT EXISTS `Users`
     last_login DATETIME
 );
 
+INSERT INTO Users (user_id,unique_id,username,email,mobile_number,password,profile_picture_url,bio) VALUES (1,'Chrisyuyol','yyol','yy368@uw.edu','18807569888','12345','abc.jpg','hi');
+
 -- Followers Table
 CREATE TABLE IF NOT EXISTS `Followers`
 (
