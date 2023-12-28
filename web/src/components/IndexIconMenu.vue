@@ -40,7 +40,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .router_link_style {
   color: black;
   text-decoration: none;

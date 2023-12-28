@@ -99,7 +99,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .user-tabbar-button {
   font-size: 18px;
   background: transparent;

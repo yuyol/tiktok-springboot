@@ -22,7 +22,14 @@
 
           <el-col :span="3">
             <div style="margin-top: 12px; text-align: left">
-              <button class="loginRegister" :style="loginStyle"></button>
+              <button
+                class="loginRegister"
+                :style="loginStyle"
+                @click="showLoginDialog"
+              ></button>
+
+              <loginDialog></loginDialog>
+
               <el-submenu index="2" class="profileIcon" :style="iconStlye">
                 <IndexIconMenu></IndexIconMenu>
               </el-submenu>
@@ -43,7 +50,6 @@
           <AsideMenu></AsideMenu>
         </el-aside>
         <el-main style="color: aliceblue">
-          <!-- <Video></Video> -->
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -57,6 +63,7 @@ import IndexIconMenu from "@/components/IndexIconMenu.vue";
 import AsideMenu from "@/components/AsideMenu.vue";
 // import Video from "@/components/Video.vue";
 import Swiper from "@/components/Swiper.vue";
+import loginDialog from "@/components/auth/loginDialog.vue";
 export default {
   data() {
     return {
@@ -79,16 +86,26 @@ export default {
     AsideMenu,
     // Video,
     Swiper,
+    loginDialog,
   },
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
     checkIfLogin() {
+      // 登陆了则显示icon
       if (sessionStorage.getItem("token") != null) {
         this.iconStlye.display = "block";
         this.loginStyle.display = "none";
+      } else {
+        this.iconStlye.display = "none";
+        this.loginStyle.display = "block";
       }
+    },
+    showLoginDialog() {
+      console.log("test");
+      this.dialogFormVisible = true;
+      this.$bus.$emit("showLogin", true);
     },
   },
   mounted() {
@@ -187,8 +204,8 @@ export default {
   height: 36px !important;
   background: white;
   border-radius: 50%;
-  background-image: url("../assets/profilePic/profile1.jpg");
-  background-size: cover;
+  /* background-image: url("../assets/profilePic/profile1.jpg");
+  background-size: cover; */
   border: 0px;
   cursor: pointer;
 }
