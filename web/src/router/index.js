@@ -11,10 +11,12 @@ export default new VueRouter({
   routes: [
     {
       path: "/recommend",
+      name: "recommend",
       component: Video,
     },
     {
       path: "/user",
+      name: "user",
       component: UserProfile,
       children: [
         {

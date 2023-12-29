@@ -6,27 +6,27 @@
       </div>
       <div style="display: flex">
         <div class="profile-text-frame">
-          <div class="profile-username">{{ userData.username }}</div>
+          <div class="profile-username">{{ userData.data.username }}</div>
           <div class="profile-follow">
             <div style="color: rgb(255, 255, 255, 0.7)">关注</div>
-            <div>{{ userData.followersDto.followAmount }}</div>
+            <div>{{ userData.data.followersDto.followAmount }}</div>
             <div style="color: rgb(255, 255, 255, 0.7); margin-left: 30px">
               粉丝
             </div>
-            <div>{{ userData.followersDto.followerAmount }}</div>
+            <div>{{ userData.data.followersDto.followerAmount }}</div>
             <div style="color: rgb(255, 255, 255, 0.7); margin-left: 30px">
               获赞
             </div>
-            <div>{{ userData.liked }}</div>
+            <div>{{ userData.data.liked }}</div>
           </div>
           <div class="profile-intro">
             <div style="color: rgb(255, 255, 255, 0.7)">抖音号:</div>
             <div style="color: rgb(255, 255, 255, 0.7)">
-              {{ userData.uniqueId }}
+              {{ userData.data.uniqueId }}
             </div>
           </div>
           <div class="profile-intro">
-            <span>{{ userData.text }}</span>
+            <span>{{ userData.data.text }}</span>
           </div>
         </div>
         <div class="profile-right-frame">
@@ -70,7 +70,9 @@ export default {
   name: "UserProfile",
   data() {
     return {
-      userData: [],
+      userData: localStorage.getItem("user")
+        ? JSON.parse(localStorage.getItem("user"))
+        : {},
       userTabBarList: [
         { name: "/user/works", navItem: "作品" },
         { name: "/user/likes", navItem: "喜欢" },
@@ -84,17 +86,18 @@ export default {
     // sessionStorage.setItem("token", "12345");
     // console.log(sessionStorage.getItem("token"));
     // router.push({ path: "/" });
-    this.$http
-      .get("http://localhost:8081/getUserByMobileNumber", {
-        params: {
-          // 以后改成动态获取
-          mobileNumber: 18807569888,
-        },
-      })
-      .then((res) => {
-        console.log(res.data);
-        this.userData = res.data;
-      });
+    // this.$http
+    //   .get("http://localhost:8081/getUserByMobileNumber", {
+    //     params: {
+    //       // 以后改成动态获取
+    //       mobileNumber: 18807569888,
+    //     },
+    //   })
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     this.userData = res.data;
+    //   });
+    console.log(this.userData);
   },
 };
 </script>
@@ -194,6 +197,7 @@ export default {
   border-radius: 50%;
 }
 .profile-text-frame {
+  line-height: 20px;
   height: 120px;
   min-height: 120px;
   align-content: center;

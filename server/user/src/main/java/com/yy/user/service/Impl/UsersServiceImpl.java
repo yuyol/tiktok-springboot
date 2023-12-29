@@ -88,7 +88,7 @@ public class UsersServiceImpl implements UsersService {
     public UsersDto getUserByMobileNumber(String mobileNumber) {
 
         Users user = usersRepository.findByMobileNumber(mobileNumber).orElseThrow(
-                () -> new ResourceNotFoundException("User", "Mobile number", mobileNumber)
+                () -> new ResourceNotFoundException("用户", "手机号", mobileNumber)
         );
         UsersDto usersDto = UsersMapper.UsersToUsersDto(user, new UsersDto());
         // 获取followersDto

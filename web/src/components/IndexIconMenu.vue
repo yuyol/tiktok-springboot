@@ -23,7 +23,7 @@
 
     <el-row style="text-align: center; margin-top: 30px">
       <el-col :span="6"><el-button>我的订单</el-button></el-col>
-      <el-col :span="6"><el-button>退出登录</el-button></el-col>
+      <el-col :span="6"><el-button @click="logout">退出登录</el-button></el-col>
       <el-col :span="6"><el-button>设置</el-button></el-col>
     </el-row>
   </div>
@@ -36,6 +36,14 @@ export default {
     return {
       navList: [{ name: "/user", navItem: "主页", navClass: "UserProfile" }],
     };
+  },
+  methods: {
+    logout() {
+      console.log("test");
+      sessionStorage.removeItem("token");
+      localStorage.removeItem("user");
+      location.reload();
+    },
   },
 };
 </script>

@@ -19,7 +19,7 @@ export default {
   name: "AsideMenu",
   data() {
     return {
-      activeIndex: "/index",
+      activeIndex: "/recommend",
       navList: [
         { name: "/index", navItem: "首页", navClass: "index" },
         { name: "/recommend", navItem: "推荐", navClass: "recommend" },

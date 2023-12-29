@@ -29,6 +29,7 @@
               ></button>
 
               <loginDialog></loginDialog>
+              <registerDialog></registerDialog>
 
               <el-submenu index="2" class="profileIcon" :style="iconStlye">
                 <IndexIconMenu></IndexIconMenu>
@@ -64,6 +65,7 @@ import AsideMenu from "@/components/AsideMenu.vue";
 // import Video from "@/components/Video.vue";
 import Swiper from "@/components/Swiper.vue";
 import loginDialog from "@/components/auth/loginDialog.vue";
+import registerDialog from "./auth/registerDialog.vue";
 export default {
   data() {
     return {
@@ -78,6 +80,9 @@ export default {
       iconStlye: {
         display: "none",
       },
+      user: localStorage.getItem("user")
+        ? JSON.parse(localStorage.getItem("user"))
+        : {},
     };
   },
   components: {
@@ -87,6 +92,7 @@ export default {
     // Video,
     Swiper,
     loginDialog,
+    registerDialog,
   },
   methods: {
     handleSelect(key, keyPath) {
@@ -94,7 +100,7 @@ export default {
     },
     checkIfLogin() {
       // 登陆了则显示icon
-      if (sessionStorage.getItem("token") != null) {
+      if (localStorage.getItem("user") != null) {
         this.iconStlye.display = "block";
         this.loginStyle.display = "none";
       } else {
