@@ -230,4 +230,8 @@ export default {
   margin: 4px;
   width: 100%;
 }
+
+.router_link_style {
+  text-decoration: none;
+}
 </style>

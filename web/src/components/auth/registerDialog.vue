@@ -54,24 +54,34 @@ export default {
   },
   methods: {
     register() {
-      console.log("test");
-      // axios向后端发送请求
-      this.$http
-        .post("http://localhost:8081/register", this.registerInfo)
-        .then((res) => {
-          console.log("success!");
-          this.dialogFormVisible = false;
-        })
-        .catch((error) => {
-          console.log("failed");
-          console.log(error.response.data);
-          this.registerErrorMsg = error.response.data.errorMessage;
-          console.log(this.registerErrorMsg);
-        });
+      console.log(this.registerInfo.password);
+      console.log(this.registerInfo.reEnterPassword);
+      if (this.registerInfo.password != this.registerInfo.reEnterPassword) {
+        this.registerErrorMsg = "请输入相同密码";
+      } else {
+        // axios向后端发送请求
+        this.$http
+          .post("http://localhost:8081/register", this.registerInfo)
+          .then((res) => {
+            console.log("success!");
+            this.dialogFormVisible = false;
+          })
+          .catch((error) => {
+            console.log("failed");
+            console.log(error.response.data);
+            this.registerErrorMsg = error.response.data.errorMessage;
+            console.log(this.registerErrorMsg);
+          });
+      }
     },
     toLogin() {
       this.$bus.$emit("showLogin", true);
       this.dialogFormVisible = false;
+    },
+    checkPassword() {
+      if (password != reEnterPassword) {
+        this.registerErrorMsg = "请输入相同密码";
+      }
     },
   },
   mounted() {
