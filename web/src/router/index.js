@@ -6,6 +6,8 @@ import Likes from "@/components/user/Likes.vue";
 import Collection from "@/components/user/Collection.vue";
 import History from "@/components/user/History.vue";
 import Creation from "@/components/user/Creation.vue";
+import Shopping from "@/components/commerce/shopping.vue";
+import MerchantDetails from "@/components/commerce/merchantDetails.vue";
 
 export default new VueRouter({
   routes: [
@@ -40,6 +42,14 @@ export default new VueRouter({
           component: Creation,
         },
       ],
+    },
+    {
+      path: "/shopping",
+      component: Shopping,
+    },
+    {
+      path: "/merchantDetails",
+      component: MerchantDetails,
     },
   ],
 });
