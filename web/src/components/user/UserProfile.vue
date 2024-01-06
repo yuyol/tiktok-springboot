@@ -79,6 +79,7 @@ export default {
         { name: "/user/collection", navItem: "收藏" },
         { name: "/user/history", navItem: "观看历史" },
         { name: "/user/creation", navItem: "创作中心" },
+        { name: "/user/myStore", navItem: "我的商城" },
       ],
     };
   },
@@ -128,6 +129,7 @@ export default {
   margin: 11px 0;
   position: relative;
   width: 100%;
+  min-width: 1000px;
 }
 .user-tabbar {
   border-top: 1px solid rgb(255, 255, 255, 0.1);

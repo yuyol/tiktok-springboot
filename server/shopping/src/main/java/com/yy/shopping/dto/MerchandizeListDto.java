@@ -7,5 +7,5 @@ import java.util.List;
 @Data
 public class MerchandizeListDto {
     private int id;
-    private List<ProductDto> childrens;
+    private ProductDto[] childrens;
 }

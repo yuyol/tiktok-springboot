@@ -1,56 +1,92 @@
 <template>
   <div class="bottom-frame">
     <div class="creation-frame">
-      <!-- <form
-        action="http://localhost:8091/upload"
-        method="POST"
-        enctype="multipart/form-data"
-      >
-        <input type="file" name="file" accept="video/*" />
-        <input type="submit" value="上传" />
-      </form> -->
-      <el-upload
-        class="upload-demo"
-        drag
-        action="http://localhost:8091/upload"
-        v-bind:on-progress="uploadVideoProcess"
-        v-bind:on-success="handleVideoSuccess"
-        v-bind:before-upload="beforeUploadVideo"
-        v-bind:show-file-list="false"
-        multiple
-      >
-        <i class="el-icon-upload"></i>
-        <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        <!-- <div class="el-upload__tip" slot="tip">
+      <div class="creation-inner-frame">
+        <div style="font-size: 20px; margin-top: 15px">上传视频</div>
+        <el-upload
+          class="upload-demo"
+          drag
+          action="http://localhost:8091/upload"
+          v-bind:on-progress="uploadVideoProcess"
+          v-bind:on-success="handleVideoSuccess"
+          v-bind:before-upload="beforeUploadVideo"
+          v-bind:show-file-list="false"
+          multiple
+        >
+          <i class="el-icon-upload"></i>
+          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+          <!-- <div class="el-upload__tip" slot="tip">
           只能上传jpg/png文件，且不超过500kb
         </div> -->
-      </el-upload>
-      <video
-        v-if="videoForm.showVideoPath != '' && !videoFlag"
-        v-bind:src="videoForm.showVideoPath"
-        class="avatar video-avatar"
-        controls="controls"
-      >
-        您的浏览器不支持视频播放
-      </video>
+        </el-upload>
+        <video
+          v-if="videoForm.showVideoPath != '' && !videoFlag"
+          v-bind:src="videoForm.showVideoPath"
+          class="avatar video-avatar"
+          controls="controls"
+        >
+          您的浏览器不支持视频播放
+        </video>
+        <div style="display: flex; margin-top: 15px">
+          <div style="font-size: 18px; padding-top: 5px">标题：</div>
+          <input type="text" class="input" />
+        </div>
+        <div style="display: flex; margin-top: 15px">
+          <div style="font-size: 18px; padding-top: 5px">简介：</div>
+          <input type="text" class="input" />
+        </div>
+        <div style="display: flex; margin-top: 15px">
+          <button class="submit">上传视频</button>
+        </div>
+      </div>
     </div>
+    <div class="bottom-right-frame">ABCD</div>
   </div>
 </template>
-<style>
+<style scoped>
+.upload-demo {
+  padding-top: 20px;
+  width: 400px;
+}
 .bottom-frame {
-  width: 100%;
+  width: 1200px;
+  display: flex;
+  margin: 0 auto;
   /* background: black; */
 }
 .creation-frame {
-  width: 100%;
+  width: 600px;
   margin-left: 30px;
   margin-right: 30px;
   background: black;
+  /* width: 360px; */
+  text-align: left;
+}
+.creation-inner-frame {
+  width: 360px;
+
+  margin: 0 auto;
 }
 .avatar {
   width: 300px;
   height: 178px;
   display: block;
+}
+.bottom-right-frame {
+  width: 600px;
+}
+.input {
+  width: 300px;
+  height: 30px;
+  border-radius: 10px;
+  border: 0px;
+}
+.submit {
+  width: 100px;
+  height: 45px;
+  font-size: 15px;
+  border-radius: 15px;
+  cursor: pointer;
 }
 </style>
 <script>

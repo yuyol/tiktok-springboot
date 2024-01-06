@@ -8,6 +8,9 @@ import History from "@/components/user/History.vue";
 import Creation from "@/components/user/Creation.vue";
 import Shopping from "@/components/commerce/shopping.vue";
 import MerchantDetails from "@/components/commerce/merchantDetails.vue";
+import MyStore from "@/components/store/MyStore.vue";
+import UploadProduct from "@/components/store/UploadProduct.vue";
+import MyProduct from "@/components/store/MyProduct.vue";
 
 export default new VueRouter({
   routes: [
@@ -40,6 +43,20 @@ export default new VueRouter({
         {
           path: "creation",
           component: Creation,
+        },
+        {
+          path: "myStore",
+          component: MyStore,
+          children: [
+            {
+              path: "uploadProduct",
+              component: UploadProduct,
+            },
+            {
+              path: "myProduct",
+              component: MyProduct,
+            },
+          ],
         },
       ],
     },
