@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="添加商城页面">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/constants/ShoppingConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/UploadDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/UploadInfoDto.java" afterDir="false" />
+    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="添加上传商品页面和部分功能">
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/MerchandizeListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/MerchandizeListDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/user/Creation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/user/Creation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/user/UserProfile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/user/UserProfile.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/UploadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/UploadInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/UploadInfoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/store/UploadProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/store/UploadProduct.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +124,8 @@
       <workItem from="1704204510655" duration="1798000" />
       <workItem from="1704321263003" duration="1237000" />
       <workItem from="1704402186718" duration="23006000" />
-      <workItem from="1704491404054" duration="15792000" />
+      <workItem from="1704491404054" duration="17699000" />
+      <workItem from="1704565201576" duration="16491000" />
     </task>
     <task id="LOCAL-00001" summary="Add Video microservice">
       <created>1703190004373</created>
@@ -189,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1704002994378</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="添加上传商品页面和部分功能">
+      <created>1704524632585</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1704524632585</updated>
+    </task>
+    <task id="LOCAL-00011" summary="添加上传商品页面和部分功能">
+      <created>1704524663718</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1704524663718</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +231,8 @@
     <MESSAGE value="更新登录注册逻辑" />
     <MESSAGE value="更新注册页面" />
     <MESSAGE value="添加商城页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加商城页面" />
+    <MESSAGE value="添加上传商品页面和部分功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加上传商品页面和部分功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,25 +2,25 @@ package com.yy.shopping.controller;
 
 import com.yy.shopping.constants.ShoppingConstants;
 import com.yy.shopping.dto.ResponseDto;
-import com.yy.shopping.dto.UploadDto;
 import com.yy.shopping.dto.UploadInfoDto;
-import org.apache.tomcat.util.http.fileupload.FileUtils;
+import com.yy.shopping.service.ShoppingService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
 
 @RestController
 @CrossOrigin
 public class ShoppingController {
+
+    ShoppingService shoppingService;
+
+    public ShoppingController(ShoppingService shoppingService) {
+        this.shoppingService = shoppingService;
+    }
 
 //    @PostMapping("/uploadProduct")
 //    public ResponseEntity<ResponseDto> uploadProduct(
@@ -41,15 +41,16 @@ public class ShoppingController {
     @PostMapping("/uploadProduct")
     public ResponseEntity<ResponseDto> uploadProduct(
             @RequestParam("files") MultipartFile[] files,
-            @RequestParam("title") String title
+            @RequestParam("title") String title,
+            @RequestParam("description") String description,
+            @RequestParam("category") List<String> categories,
+            @RequestParam("user_id") int userId,
+            @RequestParam("price") float price
             ) throws IOException {
 
-        System.out.println(files.length);
-        for (MultipartFile file :
-                files) {
-            System.out.println(file.getOriginalFilename());
-        }
-        System.out.println(title);
+        UploadInfoDto uploadInfoDto = new UploadInfoDto(files,title,description,categories,price,userId);
+
+        shoppingService.uploadProduct(uploadInfoDto);
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ResponseDto(ShoppingConstants.STATUS_201,ShoppingConstants.MESSAGE_201));

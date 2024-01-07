@@ -18,7 +18,6 @@ public class Product extends BaseEntity {
     private long id;
     private String name;
     private String description;
-    private long price;
-    private long categoryId;
+    private float price;
     private int is_deleted;
 }

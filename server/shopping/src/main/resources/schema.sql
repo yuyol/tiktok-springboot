@@ -3,11 +3,16 @@ CREATE TABLE IF NOT EXISTS `Product` (
     id Long PRIMARY KEY,
     name VARCHAR(255) DEFAULT NULL,
     description TEXT DEFAULT NULL,
-    price Long NOT NULL,
-    category_id Long,
+    price Float NOT NULL,
     is_deleted INT DEFAULT 0,
     gmt_created DATETIME DEFAULT NULL,
     gmt_updated DATETIME DEFAULT NULL
+);
+
+CREATE TABLE IF NOT EXISTS `ProductCategory` (
+    id Long primary key,
+    product_id Long,
+    category_id Long
 );
 
 -- Table structure for Inventory
