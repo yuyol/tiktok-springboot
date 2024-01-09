@@ -17,4 +17,5 @@ public class UploadInfoDto {
     private List<String> categories;
     private float price;
     private int userId;
+    private String type;
 }

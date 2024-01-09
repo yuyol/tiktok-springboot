@@ -45,10 +45,11 @@ public class ShoppingController {
             @RequestParam("description") String description,
             @RequestParam("category") List<String> categories,
             @RequestParam("user_id") int userId,
-            @RequestParam("price") float price
+            @RequestParam("price") float price,
+            @RequestParam("type") String type
             ) throws IOException {
 
-        UploadInfoDto uploadInfoDto = new UploadInfoDto(files,title,description,categories,price,userId);
+        UploadInfoDto uploadInfoDto = new UploadInfoDto(files,title,description,categories,price,userId,type);
 
         shoppingService.uploadProduct(uploadInfoDto);
 

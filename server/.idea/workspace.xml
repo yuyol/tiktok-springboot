@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="添加上传商品页面和部分功能">
-      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/mapper/ProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/CategoryDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/ProductCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/ProductInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/ProductName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductInfoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductNameRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/ShoppingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/ShoppingApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/UploadDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ProductDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/UploadInfoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/UploadInfoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/Seller.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/Seller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/store/UploadProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/store/UploadProduct.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Kotlin Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -125,7 +129,9 @@
       <workItem from="1704321263003" duration="1237000" />
       <workItem from="1704402186718" duration="23006000" />
       <workItem from="1704491404054" duration="17699000" />
-      <workItem from="1704565201576" duration="16491000" />
+      <workItem from="1704565201576" duration="17898000" />
+      <workItem from="1704657744508" duration="11271000" />
+      <workItem from="1704727988739" duration="11677000" />
     </task>
     <task id="LOCAL-00001" summary="Add Video microservice">
       <created>1703190004373</created>
@@ -204,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704524663718</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="添加上传商品页面和部分功能">
+      <created>1704612546515</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1704612546515</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +254,29 @@
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java</url>
+          <line>41</line>
+          <properties class="com.yy.shopping.controller.ShoppingController" method="uploadProduct">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java</url>
+          <line>24</line>
+          <properties class="com.yy.shopping.service.Impl.ShoppingServiceImpl" method="uploadProduct">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

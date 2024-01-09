@@ -12,11 +12,11 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class Seller extends BaseEntity{
+public class ProductCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     private long id;
     private long productNameId;
-    private long productInfoId;
     private long userId;
+    private long categoryId;
 }
