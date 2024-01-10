@@ -17,5 +17,4 @@ public class Type extends BaseEntity{
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     private long id;
     private String name;
-    private long productId;
 }

@@ -12,14 +12,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class ProductInfo extends BaseEntity{
+public class ProductInfoType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     private long id;
-    private String description;
-    private float price;
-    private int isDeleted;
-    private long userId;
+    private long productInfoId;
     private long productNameId;
+    private long userId;
     private long typeId;
 }

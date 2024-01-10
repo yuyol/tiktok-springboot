@@ -50,6 +50,30 @@
             </el-checkbox-group>
           </div>
 
+          <div style="padding-top: 10px"><h1>商品尺码*</h1></div>
+          <div style="margin-top: 20px">
+            <el-select
+              v-model="value"
+              filterable
+              allow-create
+              default-first-option
+              placeholder="请选择或自定义尺码"
+              style="
+                border: 1px solid;
+                border-radius: 5px;
+                border: 1px solid rgb(0, 0, 0, 0.1);
+              "
+            >
+              <el-option
+                v-for="item in options"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              >
+              </el-option>
+            </el-select>
+          </div>
+
           <el-button
             type="primary"
             plain
@@ -101,6 +125,37 @@ export default {
       ],
       checkboxGroup: [],
       userId: 0,
+      options: [
+        {
+          value: "XXS",
+          label: "XXS",
+        },
+        {
+          value: "XS",
+          label: "XS",
+        },
+        {
+          value: "S",
+          label: "S",
+        },
+        {
+          value: "M",
+          label: "M",
+        },
+        {
+          value: "L",
+          label: "L",
+        },
+        {
+          value: "XL",
+          label: "XL",
+        },
+        {
+          value: "XXL",
+          label: "XXL",
+        },
+      ],
+      value: [],
     };
   },
   methods: {
@@ -138,10 +193,13 @@ export default {
         formData.append("category", this.checkboxGroup[i]);
       }
 
+      console.log(this.value[0]);
+
       formData.append("title", this.title);
       formData.append("price", this.price);
       formData.append("description", this.description);
       formData.append("user_id", this.userId);
+      formData.append("type", this.value[0]);
       console.log(this.checkboxGroup);
       this.$http.post(
         "http://localhost:8101/uploadProduct",

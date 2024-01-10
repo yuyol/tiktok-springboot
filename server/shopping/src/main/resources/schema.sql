@@ -2,8 +2,8 @@
 CREATE TABLE IF NOT EXISTS `ProductName` (
     id Long PRIMARY KEY,
     name VARCHAR(255) DEFAULT NULL,
-    gmt_created DATETIME DEFAULT NULL,
-    gmt_updated DATETIME DEFAULT NULL
+    gmt_created date DEFAULT NULL,
+    gmt_updated date DEFAULT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `ProductInfo` (
@@ -11,8 +11,11 @@ CREATE TABLE IF NOT EXISTS `ProductInfo` (
     description TEXT DEFAULT NULL,
     price Float NOT NULL,
     is_deleted INT DEFAULT 0,
-    gmt_created DATETIME DEFAULT NULL,
-    gmt_updated DATETIME DEFAULT NULL
+    user_id Long NOT NULL,
+    product_name_id Long NOT NULL,
+    type_id Long NOT NULL,
+    gmt_created date DEFAULT NULL,
+    gmt_updated date DEFAULT NULL
 );
 
 -- Table structure for Category
@@ -32,8 +35,7 @@ CREATE TABLE IF NOT EXISTS `ProductCategory` (
 -- Table structure for Type
 create table if not exists `Type` (
     id Long primary key,
-    name VARCHAR(255) NOT NULL,
-    product_id Long
+    name VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS `ProductType` (
@@ -46,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `ProductType` (
 CREATE TABLE IF NOT EXISTS `ProductInfoType` (
     id Long primary key,
     product_info_id Long,
+    product_name_id Long,
     user_id Long,
     type_id Long
 );
@@ -65,8 +68,8 @@ CREATE table IF NOT EXISTS `Inventory` (
     product_id Long,
     type_id Long,
     quantity Long,
-    gmt_created DATETIME DEFAULT NULL,
-    gmt_updated DATETIME DEFAULT NULL
+    gmt_created date DEFAULT NULL,
+    gmt_updated date DEFAULT NULL
 );
 
 -- Table structure for Comment
@@ -75,8 +78,8 @@ create table if not exists `Comment`(
     comment TEXT,
     user_id Long,
     rating float,
-    gmt_created DATETIME DEFAULT NULL,
-    gmt_updated DATETIME DEFAULT NULL
+    gmt_created date DEFAULT NULL,
+    gmt_updated date DEFAULT NULL
 );
 
 -- Table structure for Follower
