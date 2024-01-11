@@ -13,6 +13,6 @@ public interface SellerRepository extends JpaRepository<Seller, Long> {
 
 
 
-    @Query(nativeQuery = true, value = "select * from Seller AS s where s.product_name_id = :nameId and s.user_id = :userId")
+    @Query(nativeQuery = true, value = "select * from Seller AS s where s.product_name_id = :nameId and s.user_id = :userId limit 1")
     Optional<Seller> findInfoIdNyNameAndUserId(@Param("nameId") long nameId, @Param("userId") long userId);
 }

@@ -46,36 +46,50 @@ public class ShoppingServiceImpl implements ShoppingService {
             // 2.1 查到了id 继续查询是否有seller关系
             Optional<Seller> seller = sellerRepository.findInfoIdNyNameAndUserId(productNameId, userId);
             if(seller.isPresent()) {
-                // 3.1 查到了seller关系，查是否绑定type关系
-                Optional<ProductType> byNameIdAndUserId = productTypeRepository.findByNameIdAndUserId(productNameId, userId);
-                if (byNameIdAndUserId.isPresent()) {
-                    //4.1 查到了type关系，抛出异常
-                    throw new AlreadyExistedException("尺码");
+
+                // 3.1 利用type name查找type id
+                Optional<Type> typebyName = typeRepository.findByName(typeName);
+                if(typebyName.isPresent()) {
+                    long typeId = typebyName.get().getId();
+                    // 4.1 查到了type id，查是否绑定type关系
+                    // 需要修改为productInfoType
+                    Optional<ProductType> byNameIdAndUserIdAndTypeId = productTypeRepository.findByNameIdAndUserIdAndTypeId(productNameId, userId, typeId);
+                    if (byNameIdAndUserIdAndTypeId.isPresent()) {
+                        //5.1 查到了type关系，抛出异常
+                        throw new AlreadyExistedException("尺码");
+                    }
+                    // 5.2 未查到type关系
+                    // 5.2.1 直接添加关系
+                    addRelationships(uploadInfoDto, userId, productNameId,typeId);
+                }else {
+                    // 4.1 未查到type id，直接创建type
+                    Type newType = new Type();
+                    newType.setName(typeName);
+                    Type save = typeRepository.save(newType);
+                    System.out.println("成功存储type");
+                    // 4.2 查找type id
+                    long typeId = save.getId();
+
+                    // 4.3 添加各种关系
+                    addRelationships(uploadInfoDto, userId, productNameId,typeId);
                 }
-                // 4.2 未查到type关系
-                // 4.2.1 利用type name在type表中查找是否有现有的type
-                searchTypeAndAddRelationships(uploadInfoDto, userId, typeName, productNameId);
             } else {
                 searchTypeAndAddRelationships(uploadInfoDto, userId, typeName, productNameId);
             }
         } else {
             // 2.1.1 创建product name
-            ProductName save = addProductName(name);
+            ProductName productName = new ProductName();
+            productName.setName(name);
+            ProductName save = productNameRepository.save(productName);
+            System.out.println(save.getGmtCreated());
+            System.out.println("成功存储product name");
             // 2.1.2 查找product id
             long productNameId = save.getId();
             // 2.2 绑定各种关系
             searchTypeAndAddRelationships(uploadInfoDto, userId, typeName, productNameId);
         }
     }
-    @Transactional
-    private ProductName addProductName(String name) {
-        ProductName productName = new ProductName();
-        productName.setName(name);
-        ProductName save = productNameRepository.save(productName);
-        System.out.println(save.getGmtCreated());
-        System.out.println("成功存储product name");
-        return save;
-    }
+
 
     /**
      * 利用type name在type表中查找是否有现有的type
@@ -148,6 +162,14 @@ public class ShoppingServiceImpl implements ShoppingService {
         productInfoTypeRelationship.setUserId(userId);
         productInfoTypeRepository.save(productInfoTypeRelationship);
         System.out.println("成功添加product info type关系");
+
+        // 5.2.5 添加product type关系
+        ProductType productType = new ProductType();
+        productType.setProductNameId(productNameId);
+        productType.setUserId(userId);
+        productType.setTypeId(typeId);
+        productTypeRepository.save(productType);
+        System.out.println("成功添加product type关系");
     }
 
     /**

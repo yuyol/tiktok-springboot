@@ -1,12 +1,12 @@
 -- Table structure for Product
-CREATE TABLE IF NOT EXISTS `ProductName` (
+CREATE TABLE IF NOT EXISTS `Product_Name` (
     id Long PRIMARY KEY,
     name VARCHAR(255) DEFAULT NULL,
     gmt_created date DEFAULT NULL,
     gmt_updated date DEFAULT NULL
 );
 
-CREATE TABLE IF NOT EXISTS `ProductInfo` (
+CREATE TABLE IF NOT EXISTS `Product_Info` (
     id Long PRIMARY KEY,
     description TEXT DEFAULT NULL,
     price Float NOT NULL,
@@ -25,7 +25,7 @@ create table if not exists `Category` (
     description TEXT
 );
 
-CREATE TABLE IF NOT EXISTS `ProductCategory` (
+CREATE TABLE IF NOT EXISTS `Product_Category` (
     id Long primary key,
     product_name_id Long,
     user_id Long,
@@ -38,14 +38,14 @@ create table if not exists `Type` (
     name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS `ProductType` (
+CREATE TABLE IF NOT EXISTS `Product_Type` (
     id Long primary key,
     product_name_id Long,
     user_id Long,
     type_id Long
 );
 
-CREATE TABLE IF NOT EXISTS `ProductInfoType` (
+CREATE TABLE IF NOT EXISTS `Product_Info_Type` (
     id Long primary key,
     product_info_id Long,
     product_name_id Long,
