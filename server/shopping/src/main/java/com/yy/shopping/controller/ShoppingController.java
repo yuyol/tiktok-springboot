@@ -1,6 +1,7 @@
 package com.yy.shopping.controller;
 
 import com.yy.shopping.constants.ShoppingConstants;
+import com.yy.shopping.dto.MerchandizeListDto;
 import com.yy.shopping.dto.ResponseDto;
 import com.yy.shopping.dto.UploadInfoDto;
 import com.yy.shopping.entity.ProductName;
@@ -63,20 +64,17 @@ public class ShoppingController {
 
         shoppingService.uploadProduct(uploadInfoDto);
 
-//        ProductName productName = new ProductName();
-//        productName.setName("abcdefg");
-//        ProductName save = productNameRepository.save(productName);
-//        System.out.println(save.getGmtCreated());
-//        System.out.println("成功存储product name");
-//
-//
-//        Type type2 = new Type();
-//        type2.setName("abcdefg");
-//        Type save1 = typeRepository.save(type2);
-//        System.out.println(save1.getGmtCreated());
-//        System.out.println("成功存储type name");
-
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(new ResponseDto(ShoppingConstants.STATUS_201,ShoppingConstants.MESSAGE_201));
+    }
+
+    @GetMapping("/getProductListBySeller")
+    public ResponseEntity<List<MerchandizeListDto>> getProductListBySeller(
+            @RequestParam long userId
+    ) {
+        List<MerchandizeListDto> merchandizeListDto = shoppingService.getProductListBySeller(userId);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(merchandizeListDto);
     }
 }

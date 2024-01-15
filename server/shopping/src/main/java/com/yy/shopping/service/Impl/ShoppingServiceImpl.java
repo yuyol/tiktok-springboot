@@ -1,20 +1,26 @@
 package com.yy.shopping.service.Impl;
 
+import com.yy.shopping.dto.MerchandizeListDto;
+import com.yy.shopping.dto.ProductDto;
 import com.yy.shopping.dto.UploadInfoDto;
 import com.yy.shopping.entity.*;
 import com.yy.shopping.exception.AlreadyExistedException;
+import com.yy.shopping.mapper.ProductMapper;
 import com.yy.shopping.repository.*;
 import com.yy.shopping.service.ShoppingService;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @AllArgsConstructor
+@NoArgsConstructor
 public class ShoppingServiceImpl implements ShoppingService {
 
     @Autowired
@@ -31,6 +37,8 @@ public class ShoppingServiceImpl implements ShoppingService {
     TypeRepository typeRepository;
     @Autowired
     ProductInfoTypeRepository productInfoTypeRepository;
+
+//    ProductMapper productMapper;
     @Override
     public void uploadProduct(UploadInfoDto uploadInfoDto) {
         // 1. 利用product name和user id在product name中查找product name id
@@ -88,6 +96,55 @@ public class ShoppingServiceImpl implements ShoppingService {
             // 2.2 绑定各种关系
             searchTypeAndAddRelationships(uploadInfoDto, userId, typeName, productNameId);
         }
+    }
+
+    int start = 0;
+    int rowSize = 5;
+    int current = 5;
+    int merchandizeListId = 0;
+
+    @Override
+    public List<MerchandizeListDto> getProductListBySeller(long userId) {
+        List<Long> productNameListBySeller = sellerRepository.findProductNameListBySeller(userId);
+        int listSize = productNameListBySeller.size();
+//        listSize = 6;
+
+
+        List<MerchandizeListDto> merchandizeList = new ArrayList<>();
+
+        // 5个name为一组 填充MerchandizeListDto
+        for (int i = start; i < listSize; i+= rowSize) {
+            MerchandizeListDto merchandizeListDto = new MerchandizeListDto();
+            List<ProductDto> childrens = new ArrayList<>();
+            for (int j = i; j < current && j < listSize; j++) {
+                // 使用 product name 获取其中一个 product info
+                long productNameId = productNameListBySeller.get(j);
+                // 获取 product name
+                Optional<ProductName> productNameById = productNameRepository.findById(productNameId);
+                String productName = "";
+                if (productNameById.isPresent()) productName = productNameById.get().getName();
+                // 获取 product info
+                Optional<Long> infoIdByProductNameId = sellerRepository.findInfoIdByProductNameId(productNameId);
+                if(infoIdByProductNameId.isPresent()) {
+                    Optional<ProductInfo> productInfoById = productInfoRepository.findById(infoIdByProductNameId.get());
+                    if(productInfoById.isPresent()) {
+                        ProductDto productDto = ProductMapper.productInfoToProductDto(productInfoById.get(), new ProductDto(), productName);
+                        childrens.add(productDto);
+                    }
+                }
+
+                System.out.print(j);
+            }
+            merchandizeListDto.setId(merchandizeListId);
+            merchandizeListDto.setChildrens(childrens);
+            merchandizeList.add(merchandizeListDto);
+            merchandizeListId++;
+//            start += rowSize;
+            current += rowSize;
+            System.out.println(" ");
+        }
+        current = 5;
+        return merchandizeList;
     }
 
 

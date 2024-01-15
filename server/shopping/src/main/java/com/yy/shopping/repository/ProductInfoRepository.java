@@ -12,4 +12,7 @@ import java.util.Optional;
 public interface ProductInfoRepository extends JpaRepository<ProductInfo, Long> {
     @Query(nativeQuery = true, value = "select pi.* from Product_Info as pi where pi.user_id = :userId AND pi.product_name_id = :productNameId AND pi.type_id = :typeId")
     Optional<ProductInfo> findByUserIdAndProductNameIdAndTypeId(@Param("userId") long userId, @Param("productNameId") long productNameId, @Param("typeId") long typeId);
+
+    @Query(nativeQuery = true, value = "select pi.* from Product_Info AS pi where pi.id = :id")
+    Optional<ProductInfo> findById(@Param("id") long id);
 }

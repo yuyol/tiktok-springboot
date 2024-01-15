@@ -7,15 +7,16 @@
     <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="添加上传商品功能&#10;(ProductName上传失效未解决)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/ProductName.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/entity/ProductName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/MerchandizeListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/MerchandizeListDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/mapper/ProductMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductInfoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductInfoTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductInfoTypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductNameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductNameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductTypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/SellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/SellerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/TypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/TypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/resources/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/newIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/newIndex.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/store/MyProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/store/MyProduct.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +30,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -131,6 +132,9 @@
       <workItem from="1704727988739" duration="12814000" />
       <workItem from="1704806159856" duration="23834000" />
       <workItem from="1704921427874" duration="9582000" />
+      <workItem from="1705108421291" duration="1170000" />
+      <workItem from="1705193981615" duration="7528000" />
+      <workItem from="1705264071190" duration="20649000" />
     </task>
     <task id="LOCAL-00001" summary="Add Video microservice">
       <created>1703190004373</created>
@@ -268,18 +272,14 @@
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint type="java-method">
-          <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java</url>
-          <line>102</line>
-          <properties class="com.yy.shopping.service.Impl.ShoppingServiceImpl" method="searchTypeAndAddRelationships">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java</url>
-          <line>61</line>
+          <line>74</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java</url>
+          <line>107</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>

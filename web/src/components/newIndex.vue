@@ -3,7 +3,7 @@
     <!-- background z-index: 0-->
     <div class="test_bg"></div>
     <div class="dark_bg_2"></div>
-    <el-header>
+    <el-header style="min-width: 800px">
       <el-menu
         lang="scss"
         style="text-align: center; border: 0px; height: 60px"
