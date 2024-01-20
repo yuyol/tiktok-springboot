@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="添加上传商品功能&#10;(ProductName上传失效未解决)">
+    <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="添加使用卖家获取商品功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/MerchandizeListDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/MerchandizeListDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ProductDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/mapper/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductInfoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductNameRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductNameRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/SellerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/SellerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/newIndex.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/newIndex.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../web/src/components/store/MyProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/store/MyProduct.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/commerce/merchantDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/commerce/merchantDetails.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +127,9 @@
       <workItem from="1704921427874" duration="9582000" />
       <workItem from="1705108421291" duration="1170000" />
       <workItem from="1705193981615" duration="7528000" />
-      <workItem from="1705264071190" duration="20649000" />
+      <workItem from="1705264071190" duration="21884000" />
+      <workItem from="1705498630340" duration="3245000" />
+      <workItem from="1705712144788" duration="7479000" />
     </task>
     <task id="LOCAL-00001" summary="Add Video microservice">
       <created>1703190004373</created>
@@ -234,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1704871440332</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="添加使用卖家获取商品功能">
+      <created>1705304918283</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1705304918283</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +265,8 @@
     <MESSAGE value="添加商城页面" />
     <MESSAGE value="添加上传商品页面和部分功能" />
     <MESSAGE value="添加上传商品功能&#10;(ProductName上传失效未解决)" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加上传商品功能&#10;(ProductName上传失效未解决)" />
+    <MESSAGE value="添加使用卖家获取商品功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加使用卖家获取商品功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -274,7 +277,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java</url>
-          <line>74</line>
+          <line>75</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

@@ -147,6 +147,12 @@ public class ShoppingServiceImpl implements ShoppingService {
         return merchandizeList;
     }
 
+    @Override
+    public ProductDto getProductDetails(long userId, long productInfoId) {
+//        productInfoRepository.
+        return null;
+    }
+
 
     /**
      * 利用type name在type表中查找是否有现有的type

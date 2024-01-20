@@ -58,16 +58,35 @@ export default {
   data() {
     return {
       query: {},
+      userId: 0,
+      productInfoId: 0,
       merchantInfo: {
         title: "过年新年战袍红色短款羽绒服外套女款2023年新款时尚洋气女装冬季",
         price: 328,
       },
     };
   },
+  methods: {
+    getDetails() {
+      console.log(this.userId);
+      console.log(this.productInfoId);
+      this.$http
+        .get("http://localhost:8101/getProductDetails", {
+          params: {
+            userId: this.userId,
+            productInfoId: this.productInfoId,
+          },
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    },
+  },
   mounted() {
-    // console.log(this.$route);
     this.query = this.$route.query;
-    console.log(this.query);
+    this.userId = this.query.id;
+    this.productInfoId = this.query.productInfoId;
+    this.getDetails();
   },
 };
 </script>

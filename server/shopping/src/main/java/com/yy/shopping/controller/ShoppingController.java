@@ -2,6 +2,7 @@ package com.yy.shopping.controller;
 
 import com.yy.shopping.constants.ShoppingConstants;
 import com.yy.shopping.dto.MerchandizeListDto;
+import com.yy.shopping.dto.ProductDto;
 import com.yy.shopping.dto.ResponseDto;
 import com.yy.shopping.dto.UploadInfoDto;
 import com.yy.shopping.entity.ProductName;
@@ -76,5 +77,16 @@ public class ShoppingController {
 
         return ResponseEntity.status(HttpStatus.OK)
                 .body(merchandizeListDto);
+    }
+
+    @GetMapping("/getProductDetails")
+    public ResponseEntity<ProductDto> getProductDetails(@RequestParam("userId") long userId,
+                                                        @RequestParam("productInfoId") long productInfoId) {
+
+        ProductDto productDto = shoppingService.getProductDetails(userId,productInfoId);
+        System.out.println(userId);
+        System.out.println(productInfoId);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(productDto);
     }
 }
