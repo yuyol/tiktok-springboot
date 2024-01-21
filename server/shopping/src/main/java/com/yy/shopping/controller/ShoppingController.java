@@ -81,11 +81,11 @@ public class ShoppingController {
 
     @GetMapping("/getProductDetails")
     public ResponseEntity<ProductDto> getProductDetails(@RequestParam("userId") long userId,
-                                                        @RequestParam("productInfoId") long productInfoId) {
+                                                        @RequestParam("productInfoId") long productInfoId,
+                                                        @RequestParam("productName") String productName) {
 
-        ProductDto productDto = shoppingService.getProductDetails(userId,productInfoId);
-        System.out.println(userId);
-        System.out.println(productInfoId);
+        ProductDto productDto = shoppingService.getProductDetails(userId,productInfoId,productName);
+
         return ResponseEntity.status(HttpStatus.OK)
                 .body(productDto);
     }

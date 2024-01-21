@@ -5,11 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c62c37b-8d00-405b-87b8-6a0e1e2f7790" name="Changes" comment="添加使用卖家获取商品功能">
+      <change afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/exception/ResourceNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/repository/ProductTypeRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/ShoppingService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../web/src/components/commerce/merchantDetails.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/commerce/merchantDetails.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../web/src/components/store/MyProduct.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../web/src/components/store/MyProduct.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +134,7 @@
       <workItem from="1705264071190" duration="21884000" />
       <workItem from="1705498630340" duration="3245000" />
       <workItem from="1705712144788" duration="7479000" />
+      <workItem from="1705779153974" duration="11631000" />
     </task>
     <task id="LOCAL-00001" summary="Add Video microservice">
       <created>1703190004373</created>
@@ -275,15 +280,19 @@
           <properties class="java.lang.IllegalStateException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/controller/ShoppingController.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="11" />
+          <line>82</line>
+          <properties class="com.yy.shopping.controller.ShoppingController" method="getProductDetails">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/shopping/src/main/java/com/yy/shopping/service/Impl/ShoppingServiceImpl.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="12" />
+          <line>168</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

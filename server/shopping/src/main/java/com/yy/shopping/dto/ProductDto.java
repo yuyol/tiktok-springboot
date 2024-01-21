@@ -15,5 +15,5 @@ public class ProductDto {
     private float price;
     private List<CategoryDto> category;
     // 当前商品的所有type
-    private List<Long> productTypeIds;
+    private List<ProductDto> productType;
 }

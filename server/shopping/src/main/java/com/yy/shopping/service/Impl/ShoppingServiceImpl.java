@@ -5,6 +5,7 @@ import com.yy.shopping.dto.ProductDto;
 import com.yy.shopping.dto.UploadInfoDto;
 import com.yy.shopping.entity.*;
 import com.yy.shopping.exception.AlreadyExistedException;
+import com.yy.shopping.exception.ResourceNotFoundException;
 import com.yy.shopping.mapper.ProductMapper;
 import com.yy.shopping.repository.*;
 import com.yy.shopping.service.ShoppingService;
@@ -148,9 +149,39 @@ public class ShoppingServiceImpl implements ShoppingService {
     }
 
     @Override
-    public ProductDto getProductDetails(long userId, long productInfoId) {
-//        productInfoRepository.
-        return null;
+    public ProductDto getProductDetails(long userId, long productInfoId, String productName) {
+        Optional<ProductInfo> productInfoById = productInfoRepository.findById(productInfoId);
+        ProductDto productDto = null;
+        if (productInfoById.isPresent()) {
+            // 1. 获取ProductInfo并转换为ProductDto
+            productDto = ProductMapper.productInfoToProductDto(productInfoById.get(), new ProductDto(), productName);
+
+            // 2. 根据user id和productId获取所有typeId
+            // 2.1 获取productNameId
+            ProductName productNameByName = productNameRepository.findByName(productName).orElseThrow(
+                    () -> new ResourceNotFoundException(productName)
+            );
+            long productNameId = productNameByName.getId();
+            List<Long> allTypeIdBySellerAndProductName = productTypeRepository.findAllTypeIdBySellerAndProductName(userId, productNameId);
+
+            List<ProductDto> productTypeList = new ArrayList<>();
+            // 3.使用除了当前typeId外的所有id获取product info
+            for(int i= 0;i<allTypeIdBySellerAndProductName.size() ;i++) {
+                // 删除重复的type id
+                if(productInfoById.get().getTypeId() == allTypeIdBySellerAndProductName.get(i)) {
+                    continue;
+                }
+                // 查找product info
+                ProductInfo productInfo = productInfoRepository.findByUserIdAndProductNameIdAndTypeId(userId, productNameId, allTypeIdBySellerAndProductName.get(i)).orElseThrow(
+                        () -> new ResourceNotFoundException("尺码")
+                );
+                // 转换为productDto
+                ProductDto productDtoChild = ProductMapper.productInfoToProductDto(productInfo, new ProductDto(), productName);
+                productTypeList.add(productDtoChild);
+            }
+            productDto.setProductType(productTypeList);
+        }
+        return productDto;
     }
 
 

@@ -60,6 +60,7 @@ export default {
       query: {},
       userId: 0,
       productInfoId: 0,
+      productName: "",
       merchantInfo: {
         title: "过年新年战袍红色短款羽绒服外套女款2023年新款时尚洋气女装冬季",
         price: 328,
@@ -75,6 +76,7 @@ export default {
           params: {
             userId: this.userId,
             productInfoId: this.productInfoId,
+            productName: this.productName,
           },
         })
         .then((res) => {
@@ -86,6 +88,7 @@ export default {
     this.query = this.$route.query;
     this.userId = this.query.id;
     this.productInfoId = this.query.productInfoId;
+    this.productName = this.query.productName;
     this.getDetails();
   },
 };

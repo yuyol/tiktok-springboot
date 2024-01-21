@@ -13,5 +13,5 @@ public interface ShoppingService {
 
     List<MerchandizeListDto> getProductListBySeller(long userId);
 
-    ProductDto getProductDetails(long userId, long productInfoId);
+    ProductDto getProductDetails(long userId, long productInfoId, String productName);
 }

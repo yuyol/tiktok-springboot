@@ -16,7 +16,7 @@
           :key="merchant.id"
         >
           <router-link
-            :to="`/merchantDetails?id=${merchant.id}&title=${merchant.name}`"
+            :to="`/merchantDetails?productInfoId=${merchant.id}&id=${userId}&productName=${merchant.name}`"
             class="routerLink"
           >
             <div class="merchantFrame">
