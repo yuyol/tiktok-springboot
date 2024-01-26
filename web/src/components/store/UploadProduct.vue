@@ -193,13 +193,13 @@ export default {
         formData.append("category", this.checkboxGroup[i]);
       }
 
-      console.log(this.value[0]);
+      console.log(this.value);
 
       formData.append("title", this.title);
       formData.append("price", this.price);
       formData.append("description", this.description);
       formData.append("user_id", this.userId);
-      formData.append("type", this.value[0]);
+      formData.append("type", this.value);
       console.log(this.checkboxGroup);
       this.$http.post(
         "http://localhost:8101/uploadProduct",

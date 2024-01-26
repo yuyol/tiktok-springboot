@@ -4,15 +4,21 @@
       <div class="imgFrame">
         <div class="imgBooth"></div>
         <div class="thumb">
-          <div class="thumbItem">1</div>
-          <div class="thumbItem">2</div>
-          <div class="thumbItem">3</div>
+          <button
+            v-for="item in typeList"
+            :key="item.id"
+            class="thumbItem"
+            @click="buttonClickGetDetails(item.productInfoId)"
+          >
+            {{ item.type }}
+          </button>
         </div>
       </div>
       <div class="textFrame">
-        <div style="font-size: 18px">商品名称：{{ merchantInfo.title }}</div>
-        <div style="margin-top: 25px">价格: {{ merchantInfo.price }} ￥</div>
-        <div>描述:</div>
+        <div style="font-size: 18px">商品名称：{{ productName }}</div>
+        <div style="margin-top: 25px">价格: {{ price }} ￥</div>
+        <div style="margin-top: 25px">描述: {{ description }}</div>
+        <div style="margin-top: 25px">尺码: {{ type }}</div>
       </div>
     </div>
   </div>
@@ -46,6 +52,9 @@
   height: 50px;
   background: black;
   margin-right: 10px;
+  color: white;
+  border: 0px;
+  cursor: pointer;
 }
 .textFrame {
   margin-left: 20px;
@@ -61,10 +70,11 @@ export default {
       userId: 0,
       productInfoId: 0,
       productName: "",
-      merchantInfo: {
-        title: "过年新年战袍红色短款羽绒服外套女款2023年新款时尚洋气女装冬季",
-        price: 328,
-      },
+      price: 0,
+      description: "",
+      type: "",
+      detailInfo: {},
+      typeList: {},
     };
   },
   methods: {
@@ -80,8 +90,19 @@ export default {
           },
         })
         .then((res) => {
-          console.log(res);
+          this.detailInfo = res.data;
+          this.typeList = this.detailInfo.productType;
+          this.productName = this.detailInfo.name;
+          this.price = this.detailInfo.price;
+          this.description = this.detailInfo.description;
+          this.productInfoId = this.detailInfo.productInfoId;
+          this.type = this.detailInfo.type;
+          console.log(this.detailInfo);
         });
+    },
+    buttonClickGetDetails(productInfoId) {
+      this.productInfoId = productInfoId;
+      this.getDetails();
     },
   },
   mounted() {
@@ -89,6 +110,7 @@ export default {
     this.userId = this.query.id;
     this.productInfoId = this.query.productInfoId;
     this.productName = this.query.productName;
+    // this.price = this.query.price;
     this.getDetails();
   },
 };

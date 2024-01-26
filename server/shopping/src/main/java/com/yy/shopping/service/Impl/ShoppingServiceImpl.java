@@ -169,6 +169,11 @@ public class ShoppingServiceImpl implements ShoppingService {
             for(int i= 0;i<allTypeIdBySellerAndProductName.size() ;i++) {
                 // 删除重复的type id
                 if(productInfoById.get().getTypeId() == allTypeIdBySellerAndProductName.get(i)) {
+                    // 添加type名
+                    Type type = typeRepository.findById(productInfoById.get().getTypeId()).orElseThrow(
+                            () -> new ResourceNotFoundException("尺码id")
+                    );
+                    productDto.setType(type.getName());
                     continue;
                 }
                 // 查找product info
@@ -177,6 +182,17 @@ public class ShoppingServiceImpl implements ShoppingService {
                 );
                 // 转换为productDto
                 ProductDto productDtoChild = ProductMapper.productInfoToProductDto(productInfo, new ProductDto(), productName);
+
+                // 添加type名
+                Type type = typeRepository.findById(productInfo.getTypeId()).orElseThrow(
+                        () -> new ResourceNotFoundException("尺码id")
+                );
+                String typeName = type.getName();
+                productDtoChild.setType(typeName);
+
+                // 添加product info id
+                productDtoChild.setProductInfoId(productInfo.getId());
+
                 productTypeList.add(productDtoChild);
             }
             productDto.setProductType(productTypeList);

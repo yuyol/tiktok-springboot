@@ -9,6 +9,8 @@ public class ProductDto {
     private long id;
     private String name;
     private String description;
+    private String type;
+    private long productInfoId;
     private long productNameId;
     private long userId;
     private long typeId;
